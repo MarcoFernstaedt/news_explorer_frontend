@@ -1,38 +1,38 @@
 .nav {
-    height: 80px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .nav__logo {
-    width: 200px;
-    height: 24px;
-    margin-left: 104px;
+  width: 200px;
+  height: 24px;
+  margin-left: 104px;
 }
 
 .nav__links {
-    margin-right: 116px;
-    font-family: 'Roboto Slab';
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 24px;
-    font-family: Roboto;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 24px;
-    text-align: center;
+  margin-right: 116px;
+  font-family: "Roboto Slab";
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
 }
 
 .nav__link {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 .nav__link-pill-btn {
-    width: 170px;
-    height: 48px;
-    border-radius: 100px;
-    border: 1px solid #FFF;
-    background-color: transparent;
-    margin-left: 42px;
+  width: 170px;
+  height: 48px;
+  border-radius: 100px;
+  border: 1px solid #fff;
+  background-color: transparent;
+  margin-left: 42px;
 }
