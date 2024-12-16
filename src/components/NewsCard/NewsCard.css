@@ -1,0 +1,57 @@
+.card {
+  width: 400px;
+  height: 576px;
+  background-color: #fff;
+}
+
+.card__image {
+  width: 400px;
+  height: 272px;
+}
+
+.card__content {
+  padding: 20px;
+}
+
+.card__pub-date {
+  width: 128px;
+  height: 24px;
+  font-family: "Source Sans Pro";
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: #b6bcbf;
+  margin-bottom: 12px;
+}
+
+.card__header {
+  width: 352px;
+  height: 60px;
+  font-family: "Roboto Slab";
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 30px;
+  color: #1a1822;
+  margin-bottom: 16px;
+}
+
+.card__paragraph {
+  width: 352px;
+  height: 88px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #1a1822;
+  margin-bottom: 40px;
+}
+
+.card__author {
+  width: 352px;
+  height: 20px;
+  font-family: "Roboto Slab";
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.4px;
+  color: #b6bcbf;
+}
