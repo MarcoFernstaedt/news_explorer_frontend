@@ -10,6 +10,7 @@
 
 .page {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   width: 1440px;
+  font-family: Roboto;
 }
