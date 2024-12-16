@@ -1,3 +1,33 @@
 .header {
-  height: 576;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 576px;
+  background-image: url(../../assets/header-bg.jpeg);
+  background-size: cover;
+}
+
+.header__title {
+  width: 600px;
+  height: 120px;
+  font-family: "Roboto Slab";
+  font-weight: 400;
+  font-size: 60px;
+  margin: 0 auto;
+  line-height: 64px;
+}
+
+.header__title-second-line {
+  display: block;
+}
+
+.header__sub-title {
+  margin: 0 auto;
+  width: 608px;
+  height: 24px;
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
 }
