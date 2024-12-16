@@ -9,6 +9,10 @@
   padding-bottom: 80px;
 }
 
+.header__hero {
+  margin-bottom: 88px;
+}
+
 .header__title {
   width: 600px;
   height: 120px;
