@@ -11,6 +11,10 @@
   margin-left: 104px;
 }
 
+.nav__logo:hover {
+  cursor: pointer;
+}
+
 .nav__links {
   margin-right: 116px;
   font-family: "Roboto Slab";
@@ -26,6 +30,14 @@
 
 .nav__link {
   background-color: transparent;
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav__link:hover {
+  color: inherit;
+  padding-bottom: 26px;
+  border-bottom: 3px solid #FFF;
 }
 
 .nav__link-pill-btn {
