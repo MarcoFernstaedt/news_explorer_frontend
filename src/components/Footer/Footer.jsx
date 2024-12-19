@@ -1,4 +1,3 @@
-import React from "react";
 import githubIcon from "../../assets/gitHub.svg";
 import facebookIcon from "../../assets/facebook.svg";
 import "./Footer.css";
@@ -24,7 +23,7 @@ const Footer = () => {
           href="https://github.com/MarcoFernstaedt"
           className="footer__social-icon"
         >
-          <img src={githubIcon} atl="Github Site Logo" />>
+          <img src={githubIcon} alt="Github Site Logo" />
         </a>
         <a href="https://facebook.com" className="footer__social-icon">
           <img src={facebookIcon} alt="Facebook Logo" />
