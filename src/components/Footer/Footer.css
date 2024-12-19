@@ -1,0 +1,47 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  padding: 0 104px;
+  background-color: #fff;
+}
+
+.footer__copy {
+  width: 433px;
+  height: 22px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #b6bcbf;
+}
+
+.footer__links {
+  display: flex;
+  gap: 40px;
+  text-decoration: none;
+  list-style: none;
+  padding: 0;
+  width: 163px;
+  height: 24px;
+  margin-right: 40px;
+  border: 2px solid black;
+}
+
+.footer__link {
+  color: #1a1822;
+}
+
+.footer__link:hover {
+  color: #1a1822;
+}
+
+.footer__social-icons {
+  gap: 25.89px;
+}
+
+.footer__social-icon {
+  width: 20.21px;
+  height: 19.71px;
+  list-style: none;
+}
