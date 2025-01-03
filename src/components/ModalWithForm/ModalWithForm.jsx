@@ -1,19 +1,20 @@
 import React from "react";
+import { useEscape } from "../../hooks/useEscape";
+import "./ModalWithForm.css";
 
 const ModalWithForm = ({ children, title, buttonText, onClose, onSubmit }) => {
+  useEscape(onClose);
+
   return (
-    <div
-      title={title}
-      buttonText={buttonText}
-      onClose={onClose}
-      onSubmit={onSubmit}
-      className="modal"
-    >
+    <div className="modal">
       <div className="modal__container">
-        <h3 className="modal__title">{title}</h1>
-        <form action="" className="modal__form">
+        <button className="modal__close" onClose={onClose}></button>
+        <h3 className="modal__title">{title}</h3>
+        <form action="" className="modal__form" onSubmit={onSubmit}>
           {children}
-          <button type='submit' className="modal__submit">{buttonText}</button>
+          <button type="submit" className="modal__submit">
+            {buttonText}
+          </button>
         </form>
       </div>
     </div>
