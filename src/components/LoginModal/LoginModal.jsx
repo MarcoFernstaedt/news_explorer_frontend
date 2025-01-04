@@ -9,9 +9,9 @@ const SigninModal = ({ title, buttonText, onClose, onSubmit }) => {
       onClose={onClose}
       onSubmit={onSubmit}
     >
-      <label htmlFor="email" className="modal__label"></label>
+      <label htmlFor="email" className="modal__label">Email</label>
       <input
-        className="modal__label"
+        className="modal__input"
         type="email"
         name="email"
         id="email"
@@ -20,9 +20,9 @@ const SigninModal = ({ title, buttonText, onClose, onSubmit }) => {
         placeholder="Enter email"
       />
 
-      <label htmlFor="password" className="modal__label"></label>
+      <label htmlFor="password" className="modal__label">Password</label>
       <input
-        className="modal__label"
+        className="modal__input"
         type="password"
         name="password"
         id='password'
