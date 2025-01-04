@@ -1,11 +1,12 @@
 import React from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
-const SigninModal = ({ title, buttonText, onClose, onSubmit }) => {
+const LoginModal = ({ title, buttonText, secondaryBtnText, onClose, onSubmit }) => {
   return (
     <ModalWithForm
       title={title}
       buttonText={buttonText}
+      secondaryBtnText={secondaryBtnText}
       onClose={onClose}
       onSubmit={onSubmit}
     >
@@ -34,4 +35,4 @@ const SigninModal = ({ title, buttonText, onClose, onSubmit }) => {
   );
 };
 
-export default SigninModal;
+export default LoginModal;
