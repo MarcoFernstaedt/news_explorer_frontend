@@ -90,10 +90,16 @@
   outline: none;
   border: none;
   background-color: #2F71E5;
-  margin: 8px auto 0px;
+  margin: 8px auto 16px;
   font-family: Roboto;
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
   text-align: center;
+}
+
+.modal__secondaryBtn {
+  width: 226px;
+  height: 20px;
+  margin: 0px auto 0px;
 }
