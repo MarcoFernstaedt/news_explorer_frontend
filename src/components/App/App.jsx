@@ -2,7 +2,7 @@ import Header from "../Header/Header";
 import Main from "../Main/Main";
 import About from "../About/About";
 import Footer from "../Footer/Footer";
-import SigninModal from "../SigninModal/SigninModal";
+import LoginModal from "../LoginModal/LoginModal";
 import "./App.css";
 import { useState } from "react";
 
@@ -26,7 +26,7 @@ const App = () => {
         <Footer />
       </div>
       {activeModal === "open" && (
-        <SigninModal
+        <LoginModal
           title="Sign in"
           buttonText="Sign In"
           onClose={handleCloseModal}
