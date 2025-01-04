@@ -99,7 +99,17 @@
 }
 
 .modal__secondaryBtn {
+  background-color: red;
   width: 226px;
   height: 20px;
   margin: 0px auto 0px;
+  text-align: center;
+  font-family: inter;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16.94px;
+}
+
+.modal__secondaryBtn_hilight-text {
+  color: #2F71E5;
 }

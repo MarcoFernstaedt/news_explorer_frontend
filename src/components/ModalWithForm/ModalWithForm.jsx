@@ -9,10 +9,10 @@ const ModalWithForm = ({
   secondaryBtnText,
   onClose,
   onSubmit,
-  onSecondaryBtnSubmit,
+  // onSecondaryBtnSubmit,
 }) => {
   useEscape(onClose);
-
+  console.log(secondaryBtnText)
   return (
     <div className="modal">
       <div className="modal__container">
@@ -27,10 +27,13 @@ const ModalWithForm = ({
           ) : (
             <button
               type="button"
-              onClick={onSecondaryBtnSubmit}
+              // onClick={onSecondaryBtnSubmit}
               className="modal__secondaryBtn"
             >
-              {secondaryBtnText}
+              or{" "}
+              <span className="modal__secondaryBtn_hilight-text">
+                {secondaryBtnText}
+              </span>
             </button>
           )}
         </form>

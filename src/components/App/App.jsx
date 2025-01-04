@@ -29,6 +29,7 @@ const App = () => {
         <LoginModal
           title="Sign in"
           buttonText="Sign In"
+          secondaryBtnText="Sign up"
           onClose={handleCloseModal}
         />
       )}
