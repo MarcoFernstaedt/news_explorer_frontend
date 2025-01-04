@@ -13,19 +13,29 @@
 }
 
 .modal__container {
+  position: relative;
   width: 430px;
   height: 380px;
   border-radius: 16px;
-  background-color: #FFF;
+  background-color: #fff;
 }
 
 .modal__close {
-  width: 13.54px;
-  height: 22.36px;
+  position: absolute;
+  top: -45px;
+  right: -45px;
+  width: 40px;
+  height: 40px;
   background-color: transparent;
-  background-image: url(../../assets/closeBtn.svg);
+  background-image: url(../../assets/close.svg);
+  background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
+  border: none;
+}
+
+.modal__close:hover {
+  border: none;
 }
 
 .modal__title {
@@ -35,5 +45,5 @@
   font-weight: 900;
   font-size: 24px;
   line-height: 28.13px;
-  color: #1A1B22;
+  color: #1a1b22;
 }
