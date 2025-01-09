@@ -3,6 +3,7 @@ import Main from "../Main/Main";
 import About from "../About/About";
 import Footer from "../Footer/Footer";
 import LoginModal from "../LoginModal/LoginModal";
+import RegisterModal from '../RegisterModal/RegisterModal';
 import "./App.css";
 import { useState } from "react";
 
@@ -25,11 +26,19 @@ const App = () => {
         <About />
         <Footer />
       </div>
-      {activeModal === "open" && (
+      {activeModal === "login" && (
         <LoginModal
           title="Sign in"
           buttonText="Sign In"
           secondaryBtnText="Sign up"
+          onClose={handleCloseModal}
+        />
+      )}
+      {activeModal === "open" && (
+        <RegisterModal
+          title="Sign in"
+          buttonText="Sign up"
+          secondaryBtnText="Login in"
           onClose={handleCloseModal}
         />
       )}
