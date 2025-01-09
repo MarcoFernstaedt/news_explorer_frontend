@@ -34,7 +34,7 @@ const App = () => {
           onClose={handleCloseModal}
         />
       )}
-      {activeModal === "open" && (
+      {activeModal === "register" && (
         <RegisterModal
           title="Sign in"
           buttonText="Sign up"
