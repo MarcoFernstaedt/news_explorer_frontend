@@ -1,6 +1,6 @@
 import "./Navigation.css";
 
-const Navigation = () => {
+const Navigation = ({ openLoginModal, openRegisterModal, isLoggedIn }) => {
   return (
     <nav className="nav">
       <div className="nav__logo">NewsExplorer</div>
