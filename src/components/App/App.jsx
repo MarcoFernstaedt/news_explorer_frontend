@@ -10,7 +10,7 @@ import { useState } from "react";
 const App = () => {
   const [activeModal, setActiveModal] = useState("open");
 
-  const openModal = () => {
+  const handleOpenModal = () => {
     setActiveModal("open");
   };
 
