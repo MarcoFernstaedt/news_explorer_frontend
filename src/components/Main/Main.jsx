@@ -2,7 +2,7 @@ import React from "react";
 import NewsCard from "../NewsCard/NewsCard";
 import "./Main.css";
 
-const Main = () => {
+const Main = ({ newsCardData }) => {
   return (
     <main className="main">
       <h3 className="main__header">Search results</h3>
