@@ -7,7 +7,7 @@ import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import "./App.css";
 import { useState } from "react";
-// import { Route, Switch } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import getNews from "../../utils/newsApi.jsx";
 
 const App = () => {
@@ -36,8 +36,7 @@ const App = () => {
       <NewsContext.Provider value={{ newsArticles, handleSearch }}>
         <div className="page">
           <Header />
-          <Main />
-          <About />
+          <Outlet />
           <Footer />
         </div>
         {activeModal === "login" && (
