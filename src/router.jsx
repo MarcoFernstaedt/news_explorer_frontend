@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "./components/App/App";
-import HomePage from "./components/HomePage/HomePage";
+import Main from "./components/Main/Main";
 import SavedNews from "./components/SavedNews/SavedNews";
 
 const router = createBrowserRouter([
@@ -10,7 +10,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <HomePage />,
+        element: <Main />,
       },
       {
         path: "/saved-news",
