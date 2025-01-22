@@ -14,7 +14,8 @@ const NewsCard = ({
   return (
     <li className="card">
       <img src={cardImage} alt="Card image" className="card__image" />
-      {/* <button className="card__save-btn"></button> */}
+      {/* <div className="card__tag">keyWord</div> */}
+      <button type='button' className="card__save-btn"></button>
       <div className="card__content">
         <p className="card__pub-date">October 24, 2024</p>
         <h3 className="card__header">

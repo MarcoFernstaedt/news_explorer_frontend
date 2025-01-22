@@ -1,4 +1,5 @@
 .card {
+  position: relative;
   width: 400px;
   height: 576px;
   background-color: #fff;
@@ -11,6 +12,32 @@
 
 .card__content {
   padding: 20px;
+}
+
+.card__tag {
+  position: absolute;
+}
+
+.card__save-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 40px;
+  height: 40px;
+  background-image: url(../../assets/save-btn-normal.svg);
+  outline: none;
+}
+
+.card__save-btn:hover {
+  background-image: url(../../assets/save-btn-hover.svg);
+}
+
+.card__save-btn_marked {
+  background-image: url(../../assets/save-btn-marked.svg);
+}
+
+.card__save-btn:focus {
+  outline: none;
 }
 
 .card__pub-date {
