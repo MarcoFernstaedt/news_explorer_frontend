@@ -1,5 +1,6 @@
 import React from "react";
 import NewsCard from "../NewsCard/NewsCard";
+import About from "../About/About";
 import "./Main.css";
 
 const Main = ({ newsCardData }) => {
@@ -12,6 +13,7 @@ const Main = ({ newsCardData }) => {
         <NewsCard />
       </ul>
       <button className="main__button">Show more</button>
+      <About />
     </main>
   );
 };
