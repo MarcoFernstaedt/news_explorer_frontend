@@ -3,18 +3,18 @@ import NewsContext from "../../context/newsContext.jsx";
 import Footer from "../Footer/Footer";
 import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
+import getNews from "../../utils/newsApi.jsx";
 import "./App.css";
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
-import getNews from "../../utils/newsApi.jsx";
 
 const App = () => {
   const [activeModal, setActiveModal] = useState("open");
   const [newsArticles, setNewsArticles] = useState([]);
 
   const handleSearch = (keyword) => {
-    // search send api request.
-    setNewsArticles([keyword]);
+    const articleArray = getNews(keyword);
+    setNewsArticles(articleArray);
   };
 
   const handleOpenLoginModal = () => {
