@@ -1,7 +1,7 @@
 .main {
   display: flex;
   flex-direction: column;
-  height: 975px;
+  /* height: 975px; */
   background-color: #f5f6f7;
   padding: 40px 40px 0px;
 }
