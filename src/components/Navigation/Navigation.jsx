@@ -1,6 +1,10 @@
 import "./Navigation.css";
 
-const Navigation = ({ openLoginModal, openRegisterModal, isLoggedIn }) => {
+const Navigation = ({
+  handleOpenLoginModal,
+  openRegisterModal,
+  isLoggedIn,
+}) => {
   return (
     <nav className="nav">
       <div className="nav__logo">NewsExplorer</div>
@@ -8,7 +12,13 @@ const Navigation = ({ openLoginModal, openRegisterModal, isLoggedIn }) => {
         <a className="nav__link" href="#">
           Home
         </a>
-        <button className="nav__link-pill-btn">Sign in</button>
+        <button
+          type="button"
+          onClick={handleOpenLoginModal}
+          className="nav__link-pill-btn"
+        >
+          Sign in
+        </button>
       </div>
     </nav>
   );

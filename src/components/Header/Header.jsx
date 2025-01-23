@@ -3,12 +3,12 @@ import Navigation from "../Navigation/Navigation";
 import SearchForm from "../SearchForm/SearchForm";
 import "./Header.css";
 
-const Header = ({ openLoginModal, openRegisterModal }) => {
+const Header = ({ handleOpenLoginModal, handleOpenRegisterModal }) => {
   return (
     <div className="header">
       <Navigation
-        openLoginModal={openLoginModal}
-        openRegisterModal={openRegisterModal}
+        handleOpenLoginModal={handleOpenLoginModal}
+        handleOpenRegisterModal={handleOpenRegisterModal}
       />
       <div className="header__hero">
         <h1 className="header__title">

@@ -1,0 +1,7 @@
+.saved-news {
+    display: flex;
+    height: 1292px;
+    width: 1440px;
+    background-color: black;
+    color: white;
+}

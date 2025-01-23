@@ -1,6 +1,4 @@
 import Header from "../Header/Header";
-import Main from "../Main/Main";
-import About from "../About/About";
 import NewsContext from "../../context/newsContext.jsx";
 import Footer from "../Footer/Footer";
 import LoginModal from "../LoginModal/LoginModal";
