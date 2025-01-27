@@ -1,4 +1,4 @@
-import { apiKey } from "../utils/constants";
+import apiKey from "../utils/constants";
 
 const baseUrl =
   process.env.NODE_ENV === "production"
