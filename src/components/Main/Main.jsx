@@ -1,12 +1,12 @@
 import React from "react";
 import NewsCard from "../NewsCard/NewsCard";
-import { NewsContext } from "../../context/newsContext";
+// import { NewsContext } from "../../context/NewsContext";
 import { useContext } from "react";
 import About from "../About/About";
 import "./Main.css";
 
 const Main = ({ newsCardData }) => {
-  const { newsArticles } = useContext(NewsContext);
+  // const { newsArticles } = useContext(NewsContext);
 
   return (
     <main className="main">

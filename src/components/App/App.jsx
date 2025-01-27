@@ -1,5 +1,5 @@
 import Header from "../Header/Header";
-import NewsContext from "../../context/newsContext.jsx";
+import NewsContext from "../../context/NewsContext.jsx";
 import Footer from "../Footer/Footer";
 import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
