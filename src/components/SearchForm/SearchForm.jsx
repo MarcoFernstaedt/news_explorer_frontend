@@ -10,10 +10,9 @@ const SearchForm = () => {
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
-    handleSearch(values);
+    console.log(values)
+    // handleSearch(values);
   };
-
-  // console.log(articleArray)
 
   return (
     <form className="search-form">

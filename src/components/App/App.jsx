@@ -18,8 +18,10 @@ const App = () => {
   }
 
   const handleSearch = (keyword) => {
+    console.log(keyword)
     const articleArray = getNews(keyword);
     setNewsArticles(articleArray);
+    console.log(newsArticles)
     handleCardRender()
   };
 
