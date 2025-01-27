@@ -1,4 +1,4 @@
-const apiKey = import.meta.env.VITE_API_KEY;
+import { apiKey } from "../utils/constants";
 
 const baseUrl =
   process.env.NODE_ENV === "production"
