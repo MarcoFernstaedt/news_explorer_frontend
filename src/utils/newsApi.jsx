@@ -36,4 +36,4 @@ const getNews = (keyword) => {
   return request(`${url}`);
 };
 
-export default { getNews, parseNewsData };
+export default getNews;
