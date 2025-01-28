@@ -37,11 +37,12 @@ const getNews = async (keyword) => {
   )}&apiKey=${apiKey}&from=${get7DaysAgo()}&to=${getToday()}&pageSize=100`;
 
   try {
-    const articleObject = await request(url);
-    return articleObject;
+    const articleObject = await request(url); // Resolve the promise
+    const articles = parseNewsData(articleObject);
+    return articles; // Return the articles array
   } catch (err) {
     console.log("Error fetching news:", err);
   }
 };
 
-export default { getNews, parseNewsData };
+export default getNews;
