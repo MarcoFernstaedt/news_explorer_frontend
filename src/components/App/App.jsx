@@ -3,8 +3,7 @@ import NewsContext from "../../context/NewsContext.jsx";
 import Footer from "../Footer/Footer";
 import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
-// import { getNews, parseNewsData } from "../../utils/newsApi.jsx";
-import getNews from '../../utils/newsApi.jsx'
+import { getNews, parseNewsData } from "../../utils/newsApi.jsx";
 import "./App.css";
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
@@ -18,12 +17,17 @@ const App = () => {
     setVisableArticles((prevCount) => prevCount + 3);
   };
 
-  const handleSearch = (keyword) => {
-    const newsObj = getNews(keyword);
-    let articleArrays = parseNewsData(newsObj);
-    // setNewsArticles(articleArrays[0]);
-    console.log(articleArrays);
-    // handleCardRender()
+  const handleSearch = async (keyword) => {
+    try {
+      const articleArrays = await getNews(keyword);
+      // setNewsArticles(articleArrays[0]);
+      console.log("app.jsx responce");
+      console.log(articleArrays);
+      console.log("Logged articles");
+      // handleCardRender()
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   const handleOpenLoginModal = () => {
