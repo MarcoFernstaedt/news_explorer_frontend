@@ -28,12 +28,21 @@ const getToday = () => {
 };
 
 const parseNewsData = (newsData) => {
-  return newsData["articles"];
+  return Object.values(newsData["articles"]);
 };
 
-const getNews = (keyword) => {
-  const url = `${baseUrl}?q=${keyword}&apiKey=${apiKey}&from=${get7DaysAgo()}&to=${getToday()}&pageSize=100`;
-  return request(`${url}`);
+const getNews = async (keyword) => {
+  const url = `${baseUrl}?q=${encodeURIComponent(
+    keyword
+  )}&apiKey=${apiKey}&from=${get7DaysAgo()}&to=${getToday()}&pageSize=100`;
+
+  try {
+    const articleObject = await request(url);
+    let articleArrays = parseNewsData(articleObject);
+    return articleArrays;
+  } catch (err) {
+    console.log("Error fetching news:", err);
+  }
 };
 
 export default getNews;
