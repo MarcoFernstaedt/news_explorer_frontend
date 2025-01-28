@@ -10,8 +10,8 @@ const SearchForm = () => {
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
-    console.log(values)
-    // handleSearch(values);
+    let keyword = values.search
+    handleSearch(keyword);
   };
 
   return (
@@ -30,7 +30,7 @@ const SearchForm = () => {
         required
       />
       <button
-        onSubmit={handleSearchSubmit}
+        onClick={handleSearchSubmit}
         className="search-form__btn"
         type="submit"
       >
