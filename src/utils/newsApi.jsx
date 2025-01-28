@@ -28,7 +28,7 @@ const getToday = () => {
 };
 
 const parseNewsData = (newsData) => {
-  return Object.values(newsData["articles"]);
+  return newsData["articles"];
 };
 
 const getNews = async (keyword) => {
@@ -38,11 +38,10 @@ const getNews = async (keyword) => {
 
   try {
     const articleObject = await request(url);
-    let articleArrays = parseNewsData(articleObject);
-    return articleArrays;
+    return articleObject;
   } catch (err) {
     console.log("Error fetching news:", err);
   }
 };
 
-export default getNews;
+export default { getNews, parseNewsData };
