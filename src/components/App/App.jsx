@@ -5,7 +5,7 @@ import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import getNews from "../../utils/newsApi.jsx";
 import "./App.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 
 const App = () => {
@@ -21,11 +21,7 @@ const App = () => {
     try {
       const articlesObject = await getNews(keyword);
       setNewsArticles(articlesObject);
-      console.log('state')
-      console.log(newsArticles)
-      console.log('object')
-      console.log(articlesObject)
-      // handleCardRender()
+      handleCardRender();
     } catch (err) {
       console.log(err);
     }
@@ -43,6 +39,10 @@ const App = () => {
     setActiveModal("");
   };
 
+  // useEffect(() => {
+  //   console.log()
+  // }, [newsArticles])
+
   return (
     <div className="app">
       <NewsContext.Provider value={{ newsArticles, handleSearch }}>
@@ -52,7 +52,6 @@ const App = () => {
             context={{
               visibleArticles,
               handleCardRender,
-              handleSearch,
             }}
           />
           <Footer />

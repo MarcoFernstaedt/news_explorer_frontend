@@ -3,19 +3,16 @@ import cardImage from "../../assets/card-image.jpeg";
 import "./NewsCard.css";
 
 const NewsCard = ({
-  isLoggedIn,
-  keyword,
-  articleImage,
-  pubDate,
-  title,
-  content,
-  author,
+  // isLoggedIn,
+  article,
 }) => {
+  console.log(article);
+
   return (
     <li className="card">
       <img src={cardImage} alt="Card image" className="card__image" />
       {/* <div className="card__tag">keyWord</div> */}
-      <button type='button' className="card__save-btn"></button>
+      <button type="button" className="card__save-btn"></button>
       <div className="card__content">
         <p className="card__pub-date">October 24, 2024</p>
         <h3 className="card__header">
