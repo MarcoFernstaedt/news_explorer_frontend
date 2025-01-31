@@ -21,6 +21,7 @@ const App = () => {
     try {
       const articlesObject = await getNews(keyword);
       setNewsArticles(articlesObject);
+      setVisableArticles(0);
       handleCardRender();
     } catch (err) {
       console.log(err);
@@ -38,10 +39,6 @@ const App = () => {
   const handleCloseModal = () => {
     setActiveModal("");
   };
-
-  // useEffect(() => {
-  //   console.log()
-  // }, [newsArticles])
 
   return (
     <div className="app">
