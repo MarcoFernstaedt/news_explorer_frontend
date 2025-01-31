@@ -8,21 +8,26 @@ import { useOutletContext } from "react-router-dom";
 
 const Main = () => {
   const { newsArticles } = useContext(NewsContext);
-  const { visibleArticles } = useOutletContext();
+  const { visibleArticles, handleCardRender } = useOutletContext();
 
   return (
     <main className="main">
-      <h3 className="main__header">Search results</h3>
-      <ul className="main__card-wrap">
-        {/* {newsArticles.slice(0, visibleArticles).forEach((article) => {
-          return <NewsCard article={article} />;
-        })} */}
+      <h3 className={visibleArticles > 0 ? "main__header" : "main__header_hidden"}>Search results</h3>
+      <ul className={visibleArticles > 0 ? 'main__card-wrap' : 'main__card-wrap_hidden'}>
+        {newsArticles.length > 0 &&
+          newsArticles
+            .slice(0, visibleArticles)
+            .map((article, index) => (
+              <NewsCard key={index} article={article} />
+            ))}
         {/* <NewsCard />
         <NewsCard />
         <NewsCard />
         <NewsCard /> */}
       </ul>
-      <button className="main__button">Show more</button>
+      <button type="button" onClick={handleCardRender} className="main__button">
+        Show more
+      </button>
       <About />
     </main>
   );
