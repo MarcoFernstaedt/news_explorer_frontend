@@ -10,20 +10,14 @@ const NewsCard = ({
 
   return (
     <li className="card">
-      <img src={cardImage} alt="Card image" className="card__image" />
-      {/* <div className="card__tag">keyWord</div> */}
+      <img src={article.urlToImage} alt="Card image" className="card__image" />
+      {/* <div className="card__tag">{article.}</div> */}
       <button type="button" className="card__save-btn"></button>
       <div className="card__content">
         <p className="card__pub-date">October 24, 2024</p>
-        <h3 className="card__header">
-          Grand Teton Renews Historic Crest Trail
-        </h3>
-        <p className="card__paragraph">
-          “The linking together of the Cascade and Death Canyon trails, at their
-          heads, took place on October 1, 1933, and marked the first step in the
-          realization of a plan whereby the hiker will be...
-        </p>
-        <p className="card__author">Author</p>
+        <h3 className="card__header">{article.title}</h3>
+        <p className="card__paragraph">{article.content}</p>
+        <p className="card__author">{article.author}</p>
       </div>
     </li>
   );
