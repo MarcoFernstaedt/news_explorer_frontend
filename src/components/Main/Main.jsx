@@ -12,14 +12,20 @@ const Main = () => {
 
   return (
     <main className="main">
-      <h3 className={visibleArticles > 0 ? "main__header" : "main__header_hidden"}>Search results</h3>
-      <ul className={visibleArticles > 0 ? 'main__card-wrap' : 'main__card-wrap_hidden'}>
+      <h3
+        className={visibleArticles > 0 ? "main__header" : "main__header_hidden"}
+      >
+        Search results
+      </h3>
+      <ul
+        className={
+          visibleArticles > 0 ? "main__card-wrap" : "main__card-wrap_hidden"
+        }
+      >
         {newsArticles.length > 0 &&
           newsArticles
             .slice(0, visibleArticles)
-            .map((article, index) => (
-              <NewsCard key={index} {...article} />
-            ))}
+            .map((article, index) => <NewsCard key={index} {...article} />)}
         {/* <NewsCard />
         <NewsCard />
         <NewsCard />
