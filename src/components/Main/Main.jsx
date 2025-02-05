@@ -18,7 +18,7 @@ const Main = () => {
           newsArticles
             .slice(0, visibleArticles)
             .map((article, index) => (
-              <NewsCard key={index} article={article} />
+              <NewsCard key={index} {...article} />
             ))}
         {/* <NewsCard />
         <NewsCard />
