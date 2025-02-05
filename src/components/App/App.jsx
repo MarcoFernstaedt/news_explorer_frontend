@@ -14,7 +14,13 @@ const App = () => {
   const [visibleArticles, setVisableArticles] = useState(0);
 
   const handleCardRender = () => {
-    setVisableArticles((prevCount) => prevCount + 3);
+    setVisableArticles((prevCount) => {
+      if (prevCount + 3 > 100) {
+        prevCount = 100;
+      }
+
+      prevCount + 3;
+    });
   };
 
   const handleSearch = async (keyword) => {
@@ -25,8 +31,6 @@ const App = () => {
         ...article,
         keyword,
       }));
-
-      console.log(articleObj)
 
       setNewsArticles(articleObj);
       setVisableArticles(0);
