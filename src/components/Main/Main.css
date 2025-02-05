@@ -41,3 +41,7 @@
   margin: 0 auto 40px;
   color: #1a1822;
 }
+
+.main__button:hover {
+  background-color: #E9E8E8;
+}
