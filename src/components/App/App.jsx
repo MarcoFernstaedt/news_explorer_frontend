@@ -26,7 +26,7 @@ const App = () => {
         keyword,
       }));
 
-      // console.log(articleObj)
+      console.log(articleObj)
 
       setNewsArticles(articleObj);
       setVisableArticles(0);
