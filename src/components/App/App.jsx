@@ -19,8 +19,16 @@ const App = () => {
 
   const handleSearch = async (keyword) => {
     try {
-      const articlesObject = await getNews(keyword);
-      setNewsArticles(articlesObject);
+      const articleData = await getNews(keyword);
+
+      const articleObj = articleData.map((article) => ({
+        ...article,
+        keyword,
+      }));
+
+      // console.log(articleObj)
+
+      setNewsArticles(articleObj);
       setVisableArticles(0);
       handleCardRender();
     } catch (err) {
@@ -39,6 +47,10 @@ const App = () => {
   const handleCloseModal = () => {
     setActiveModal("");
   };
+
+  // useEffect(() => {
+  //   console.log(newsArticles)
+  // }, [newsArticles])
 
   return (
     <div className="app">

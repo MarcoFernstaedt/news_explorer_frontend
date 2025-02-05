@@ -4,21 +4,27 @@ import "./NewsCard.css";
 
 const NewsCard = ({
   // isLoggedIn,
-  article,
+  title,
+  urlToImage,
+  keyword,
+  content,
+  pubDate,
+  author,
 }) => {
-  console.log(article);
+  console.log(keyword);
 
   return (
     <li className="card">
-      <img src={article.urlToImage} alt="Card image" className="card__image" />
-      {/* <div className="card__tag">{article.}</div> */}
+      {/* <img src={urlToImage} alt="Card image" className="card__image" />
+      {/* <div className="card__tag">{keyword}</div> */}
       <button type="button" className="card__save-btn"></button>
       <div className="card__content">
-        <p className="card__pub-date">October 24, 2024</p>
-        <h3 className="card__header">{article.title}</h3>
-        <p className="card__paragraph">{article.content}</p>
-        <p className="card__author">{article.author}</p>
-      </div>
+        <p className="card__pub-date">publishedAt</p>
+        <h3 className="card__header">{title}</h3>
+        <p className="card__paragraph">{content}</p>
+        <p className="card__author">{author}</p>
+      </div>{" "}
+      */}
     </li>
   );
 };
