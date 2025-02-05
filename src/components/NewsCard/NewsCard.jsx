@@ -15,7 +15,7 @@ const NewsCard = ({
 
   return (
     <li className="card">
-      {/* <img src={urlToImage} alt="Card image" className="card__image" />
+      <img src={urlToImage} alt="Card image" className="card__image" />
       {/* <div className="card__tag">{keyword}</div> */}
       <button type="button" className="card__save-btn"></button>
       <div className="card__content">
@@ -23,8 +23,7 @@ const NewsCard = ({
         <h3 className="card__header">{title}</h3>
         <p className="card__paragraph">{content}</p>
         <p className="card__author">{author}</p>
-      </div>{" "}
-      */}
+      </div>
     </li>
   );
 };
