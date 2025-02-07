@@ -1,8 +1,9 @@
 .card {
   position: relative;
   width: 400px;
-  /* height: 576px; */
+  padding: 0;
   background-color: #fff;
+  /* background-color: black; */
 }
 
 .card__image {
@@ -14,12 +15,12 @@
   padding: 20px;
 }
 
-.card__tag {
+/* .card__tag {
   position: absolute;
   top: 24px;
   width: 24px;
   outline: none;
-}
+} */
 
 .card__save-btn {
   position: absolute;
