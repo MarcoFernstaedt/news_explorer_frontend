@@ -16,6 +16,9 @@
 
 .card__tag {
   position: absolute;
+  top: 24px;
+  width: 24px;
+  outline: none;
 }
 
 .card__save-btn {

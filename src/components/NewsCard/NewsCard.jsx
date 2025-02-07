@@ -11,7 +11,7 @@ const NewsCard = ({
   pubDate,
   author,
 }) => {
-  console.log(keyword);
+
 
   return (
     <li className="card">
