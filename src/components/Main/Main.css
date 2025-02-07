@@ -43,5 +43,10 @@
 }
 
 .main__button:hover {
-  background-color: #E9E8E8;
+  background-color: #e9e8e8;
+}
+
+.main__button_inactive {
+  background-color: #e6e8eb;
+  color: #b6bcbf;
 }
