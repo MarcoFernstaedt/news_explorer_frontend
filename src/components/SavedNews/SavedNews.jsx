@@ -9,48 +9,51 @@ const SavedNews = () => {
   // const { newsArticles } = useContext(NewsContext);
 
   const newsArticles = [
-      {
-          title: "Breaking News: Tech Innovation in 2024",
-          urlToImage: cardImage, // Using the variable
-          keyword: "Technology",
-          content: "The latest advancements in AI and robotics are reshaping the industry...",
-          pubDate: "2024-02-10",
-          author: "John Doe",
-      },
-      {
-          title: "Breaking News: Tech Innovation in 2024",
-          urlToImage: cardImage, // Using the variable
-          keyword: "Technology",
-          content: "The latest advancements in AI and robotics are reshaping the industry...",
-          pubDate: "2024-02-10",
-          author: "John Doe",
-      },
-      {
-          title: "Breaking News: Tech Innovation in 2024",
-          urlToImage: cardImage, // Using the variable
-          keyword: "Technology",
-          content: "The latest advancements in AI and robotics are reshaping the industry...",
-          pubDate: "2024-02-10",
-          author: "John Doe",
-      },
-      {
-          title: "Breaking News: Tech Innovation in 2024",
-          urlToImage: cardImage, // Using the variable
-          keyword: "Technology",
-          content: "The latest advancements in AI and robotics are reshaping the industry...",
-          pubDate: "2024-02-10",
-          author: "John Doe",
-      }
+    {
+      title: "Breaking News: Tech Innovation in 2024",
+      urlToImage: cardImage, // Using the variable
+      keyword: "Technology",
+      content:
+        "The latest advancements in AI and robotics are reshaping the industry...",
+      pubDate: "2024-02-10",
+      author: "John Doe",
+    },
+    {
+      title: "Breaking News: Tech Innovation in 2024",
+      urlToImage: cardImage, // Using the variable
+      keyword: "Technology",
+      content:
+        "The latest advancements in AI and robotics are reshaping the industry...",
+      pubDate: "2024-02-10",
+      author: "John Doe",
+    },
+    {
+      title: "Breaking News: Tech Innovation in 2024",
+      urlToImage: cardImage, // Using the variable
+      keyword: "Technology",
+      content:
+        "The latest advancements in AI and robotics are reshaping the industry...",
+      pubDate: "2024-02-10",
+      author: "John Doe",
+    },
+    {
+      title: "Breaking News: Tech Innovation in 2024",
+      urlToImage: cardImage, // Using the variable
+      keyword: "Technology",
+      content:
+        "The latest advancements in AI and robotics are reshaping the industry...",
+      pubDate: "2024-02-10",
+      author: "John Doe",
+    },
   ];
-  
 
   console.log(newsArticles);
   return (
-    <div className="saved-news">
+    <ul className="saved-news">
       {newsArticles.map((article, index) => (
         <NewsCard key={index} {...article} />
       ))}
-    </div>
+    </ul>
   );
 };
 

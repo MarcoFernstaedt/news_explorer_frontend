@@ -1,8 +1,10 @@
 .saved-news {
+  box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;
-  background-color: black;
+  padding: 40px;
+  background-color: #fff;
   color: white;
 }
