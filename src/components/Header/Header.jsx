@@ -14,7 +14,8 @@ const Header = ({ handleOpenLoginModal, handleOpenRegisterModal }) => {
         handleOpenLoginModal={handleOpenLoginModal}
         handleOpenRegisterModal={handleOpenRegisterModal}
       />
-      <div className={isHome ? "header__hero" : "header__hero header__hero_saved-news"}>
+      <div className={isHome ? "header__hero" : "header__hero_saved-news"}>
+        <p className="header__heading">Saved articles</p>
         <h1
           className={
             isHome
@@ -22,20 +23,15 @@ const Header = ({ handleOpenLoginModal, handleOpenRegisterModal }) => {
               : "header__title header__title_saved-news"
           }
         >
-          {isHome ? "What's going on in" : "Marco you have 5 Saved"}
+          {isHome ? "What's going on in" : "Marco, you have 5 Saved"}
           <span
-            className={
-              isHome
-                ? "header__title-second-line"
-                : "header__title-second-line_saved-news"
-            }
+            className="header__title-second-line"
           >
-            {isHome ? "the world?" : "Articles"}
+            {isHome ? "the world?" : "articles"}
           </span>
         </h1>
         <p className={isHome ? "header__sub-title header__sub-title_home" : 'header__sub-title_saved-news'}>
-          Find the latest news on any topic and save them in your personal
-          account.
+          {isHome ? 'Find the latest news on any topic and save them in your personal account.' : 'By keywords: '}
         </p>
       </div>
       {isHome && <SearchForm />}

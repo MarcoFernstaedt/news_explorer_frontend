@@ -14,6 +14,7 @@
 .header_saved-news {
   background-color: black;
   color: white;
+  /* color: #1A1B22; */
 }
 
 .header__hero {
@@ -21,15 +22,21 @@
 }
 
 .header__hero_saved-news {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  padding: 40px 0 56px 104px;
+}
+
+.header__heading {
+  max-width: 712px;
+  height: 24px;
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .header__title {
   font-family: "Roboto Slab";
   font-weight: 400;
-  /* color: #1A1B22; */
 }
 
 .header__title_home {
@@ -43,7 +50,7 @@
 .header__title_saved-news {
   width: 530px;
   height: 92px;
-  margin: 0 0 30px 104px;
+  margin: 28px 0 30px;
   font-size: 40px;
   line-height: 46px;
 }
@@ -51,10 +58,6 @@
 .header__title-second-line {
   display: block;
 }
-
-/* header__title-second-line_saved-news {
-
-} */
 
 .header__sub-title {
   font-family: Roboto;
@@ -70,5 +73,5 @@
 }
 
 .header__sub-title_saved-news {
-  margin-left: 104px;
+  /* margin-left: 104px; */
 }
