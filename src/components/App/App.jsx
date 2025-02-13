@@ -65,6 +65,8 @@ const App = () => {
             context={{
               visibleArticles,
               handleCardRender,
+              handleOpenLoginModal,
+              handleOpenRegisterModal,
             }}
           />
           <Footer />
