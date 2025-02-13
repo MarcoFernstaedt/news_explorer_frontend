@@ -1,15 +1,14 @@
+import { useOutletContext } from "react-router-dom";
 import "./Navigation.css";
 
-const Navigation = ({
-  handleOpenLoginModal,
-  openRegisterModal,
-  isLoggedIn,
-}) => {
+const Navigation = () => {
+  const { handleOpenLoginModal } = useOutletContext()
+
   return (
     <nav className="nav">
       <div className="nav__logo">NewsExplorer</div>
       <div className="nav__links">
-        <a className="nav__link" href="#">
+        <a className="nav__link" href="/">
           Home
         </a>
         <button
