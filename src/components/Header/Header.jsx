@@ -33,7 +33,7 @@ const Header = ({ handleOpenLoginModal, handleOpenRegisterModal }) => {
             {isHome ? "the world?" : "Articles"}
           </span>
         </h1>
-        <p className="header__sub-title">
+        <p className={isHome ? "header__sub-title header__sub-title_home" : 'header__sub-title_saved-news'}>
           Find the latest news on any topic and save them in your personal
           account.
         </p>
