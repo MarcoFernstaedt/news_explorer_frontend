@@ -14,12 +14,12 @@ const Header = ({ handleOpenLoginModal, handleOpenRegisterModal }) => {
         handleOpenLoginModal={handleOpenLoginModal}
         handleOpenRegisterModal={handleOpenRegisterModal}
       />
-      <div className={isHome ? "header__hero" : "header__hero_saved-news"}>
+      <div className={isHome ? "header__hero" : "header__hero header__hero_saved-news"}>
         <h1
           className={
             isHome
-              ? "header__title"
-              : "header__title_saved-news"
+              ? "header__title header__title_home"
+              : "header__title header__title_saved-news"
           }
         >
           {isHome ? "What's going on in" : "Marco you have 5 Saved"}
