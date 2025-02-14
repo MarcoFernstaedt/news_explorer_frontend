@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 
 const App = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [activeModal, setActiveModal] = useState("open");
   const [newsArticles, setNewsArticles] = useState({});
   const [visibleArticles, setVisableArticles] = useState(0);
@@ -60,7 +61,11 @@ const App = () => {
     <div className="app">
       <NewsContext.Provider value={{ newsArticles, handleSearch }}>
         <div className="page">
-          <Header />
+          <Header
+            handleOpenLoginModal={handleOpenLoginModal}
+            handleOpenRegisterModal={handleOpenRegisterModal}
+            isLoggedIn={isLoggedIn}
+          />
           <Outlet
             context={{
               visibleArticles,
