@@ -17,12 +17,22 @@
   padding: 20px;
 }
 
-/* .card__tag {
+.card__tag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   top: 24px;
-  width: 24px;
+  left: 24px;
+  text-align: center;
+  /* width: 24px; */
+  height: 40px;
+  padding: 0 22px;
+  border-radius: 10%;
+  background-color: #fff;
+  color: #1a1822;
   outline: none;
-} */
+}
 
 .card__save-btn {
   position: absolute;

@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 import "./NewsCard.css";
 
 const NewsCard = ({
-  // isLoggedIn,
+  isLoggedIn,
   title,
   urlToImage,
   keyword,
@@ -12,14 +12,16 @@ const NewsCard = ({
   publishedAt,
   author,
 }) => {
-  const location = useLocation()
-  const savedNewsPage = location.pathname === '/saved-news'
+  const location = useLocation();
+  const savedNewsPage = location.pathname === "/saved-news";
 
   return (
     <li className="card">
       <img src={urlToImage} alt="Card image" className="card__image" />
       {savedNewsPage && <div className="card__tag">{keyword}</div>}
-      <button type="button" className="card__save-btn"></button>
+      <button type="button" className="card__save-btn">
+        {/* <div className="nard__alert-popup">You must be logged in to save</div> */}
+      </button>
       <div className="card__content">
         <p className="card__pub-date">{publishedAt}</p>
         <h3 className="card__header">{title}</h3>
