@@ -12,16 +12,14 @@ const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [activeModal, setActiveModal] = useState("open");
   const [newsArticles, setNewsArticles] = useState({});
+  const [savedArticles, setSavedArticles] = useState({});
   const [visibleArticles, setVisableArticles] = useState(0);
 
   const handleCardRender = () => {
-    setVisableArticles((prevCount) => {
-      if (prevCount + 3 > 100) {
-        prevCount = 100;
-      }
-
-      prevCount + 3;
-    });
+    if (visibleArticles + 3 > 100) {
+      setVisableArticles(100);
+    }
+    setVisableArticles((prevCount) => prevCount + 3);
   };
 
   const handleSearch = async (keyword) => {
