@@ -16,8 +16,8 @@ const App = () => {
   const [visibleArticles, setVisableArticles] = useState(0);
 
   const handleCardRender = () => {
-    if (visibleArticles + 3 > 100) {
-      setVisableArticles(100);
+    if (visibleArticles > newsArticles.length) {
+      setVisableArticles(newsArticles.length);
     }
     setVisableArticles((prevCount) => prevCount + 3);
   };
