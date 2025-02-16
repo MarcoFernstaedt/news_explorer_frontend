@@ -13,27 +13,31 @@ const Main = () => {
   return (
     <main className="main">
       <h3
-        className={visibleArticles > 0 ? "main__header" : "main__header_hidden"}
+        // className={visibleArticles > 0 ? "main__header" : "main__header_hidden"}
+        className="main__header"
       >
         Search results
       </h3>
       <ul
-        className={
-          visibleArticles > 0 ? "main__card-wrap" : "main__card-wrap_hidden"
-        }
+        // className={
+        //   visibleArticles > 0 ? "main__card-wrap" : "main__card-wrap_hidden"
+        // }
+        className="main__card-wrap"
       >
-        {newsArticles.length > 0 &&
+        {visibleArticles <= newsArticles.length &&
           newsArticles
             .slice(0, visibleArticles)
             .map((article, index) => <NewsCard key={index} {...article} />)}
-        {/* <NewsCard />
-        <NewsCard />
-        <NewsCard />
-        <NewsCard /> */}
       </ul>
-      <button type="button" onClick={handleCardRender} className="main__button">
-        Show more
-      </button>
+      {visibleArticles < newsArticles.length && (
+        <button
+          type="button"
+          onClick={handleCardRender}
+          className="main__button"
+        >
+          Show more
+        </button>
+      )}
       <About />
     </main>
   );
