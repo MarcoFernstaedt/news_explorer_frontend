@@ -29,7 +29,7 @@ const Main = () => {
             .slice(0, visibleArticles)
             .map((article, index) => <NewsCard key={index} {...article} />)}
       </ul>
-      {visibleArticles < newsArticles.length && (
+      {visibleArticles <= newsArticles.length && (
         <button
           type="button"
           onClick={handleCardRender}
