@@ -34,14 +34,21 @@
   outline: none;
 }
 
-.card__save-btn {
+.card__btn {
   position: absolute;
   top: 24px;
   right: 24px;
   width: 40px;
   height: 40px;
-  background-image: url(../../assets/save-btn-normal.svg);
   outline: none;
+}
+
+.card__btn:focus {
+  outline: none;
+}
+
+.card__save-btn {  
+  background-image: url(../../assets/save-btn-normal.svg);
 }
 
 .card__save-btn:hover {
@@ -52,8 +59,8 @@
   background-image: url(../../assets/save-btn-marked.svg);
 }
 
-.card__save-btn:focus {
-  outline: none;
+.card__delete-btn {
+  background-image: url(../../assets/trash.svg);
 }
 
 .card__pub-date {

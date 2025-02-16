@@ -19,7 +19,7 @@ const NewsCard = ({
     <li className="card">
       <img src={urlToImage} alt="Card image" className="card__image" />
       {savedNewsPage && <div className="card__tag">{keyword}</div>}
-      <button type="button" className="card__save-btn">
+      <button type="button" className={savedNewsPage ? 'card__btn card__delete-btn' : "card__btn card__save-btn"}>
         {/* <div className="nard__alert-popup">You must be logged in to save</div> */}
       </button>
       <div className="card__content">
