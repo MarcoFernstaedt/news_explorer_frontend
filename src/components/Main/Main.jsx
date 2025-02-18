@@ -13,16 +13,15 @@ const Main = () => {
   return (
     <main className="main">
       <h3
-        // className={visibleArticles > 0 ? "main__header" : "main__header_hidden"}
-        className="main__header"
+        className={visibleArticles > 0 ? "main__header" : "main__header_hidden_hidden"}
+        // className="main__header"
       >
         Search results
       </h3>
       <ul
-        // className={
-        //   visibleArticles > 0 ? "main__card-wrap" : "main__card-wrap_hidden"
-        // }
-        className="main__card-wrap"
+        className={
+          visibleArticles > 0 ? "main__card-wrap" : "main__card-wrap_hidden"
+        }
       >
         {visibleArticles <= newsArticles.length &&
           newsArticles
