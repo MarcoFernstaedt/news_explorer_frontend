@@ -3,43 +3,49 @@ import NewsCard from "../NewsCard/NewsCard";
 import NewsContext from "../../context/NewsContext";
 import { useContext } from "react";
 import About from "../About/About";
-import Preloader from '../Preloader/Preloader';
+import Preloader from "../Preloader/Preloader";
 import "./Main.css";
 import { useOutletContext } from "react-router-dom";
 
 const Main = () => {
   const { newsArticles } = useContext(NewsContext);
-  const { visibleArticles, isLoading, handleCardRender } = useOutletContext();
+  const { visibleArticles, isLoading, haveResults, handleCardRender } =
+    useOutletContext();
 
   return (
     <main className="main">
-      {isLoading && (
+      {isLoading ? (
         <Preloader />
-      )}
-      <h3
-        className={visibleArticles > 0 ? "main__header" : "main__header_hidden_hidden"}
-        // className="main__header"
-      >
-        Search results
-      </h3>
-      <ul
-        className={
-          visibleArticles > 0 ? "main__card-wrap" : "main__card-wrap_hidden"
-        }
-      >
-        {visibleArticles <= newsArticles.length &&
-          newsArticles
-            .slice(0, visibleArticles)
-            .map((article, index) => <NewsCard key={index} {...article} />)}
-      </ul>
-      {visibleArticles <= newsArticles.length && (
-        <button
-          type="button"
-          onClick={handleCardRender}
-          className="main__button"
-        >
-          Show more
-        </button>
+      ) : haveResults ? (
+        <>
+          <h3
+            className={
+              visibleArticles > 0 ? "main__header" : "main__header_hidden"
+            }
+          >
+            Search results
+          </h3>
+          <ul
+            className={
+              visibleArticles > 0 ? "main__card-wrap" : "main__card-wrap_hidden"
+            }
+          >
+            {newsArticles.slice(0, visibleArticles).map((article, index) => (
+              <NewsCard key={index} {...article} />
+            ))}
+          </ul>
+          <button
+            type="button"
+            onClick={handleCardRender}
+            className="main__button"
+          >
+            Show more
+          </button>
+        </>
+      ) : (
+        <p className="error-message">
+          No results found. Please try another search.
+        </p>
       )}
       <About />
     </main>
