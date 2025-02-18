@@ -20,6 +20,7 @@ const NewsCard = ({
     <li className="card">
       <img src={urlToImage} alt="Card image" className="card__image" />
       {savedNewsPage && <div className="card__tag">{keyword}</div>}
+      <div className="card__alert-popup">{!savedNewsPage ? 'Signin to save article' : 'Remove from saved'}</div>
       <button
         type="button"
         className={
@@ -27,9 +28,7 @@ const NewsCard = ({
             ? "card__btn card__delete-btn"
             : "card__btn card__save-btn"
         }
-      >
-        {/* <div className="nard__alert-popup">You must be logged in to save</div> */}
-      </button>
+      ></button>
       <div className="card__content">
         <p className="card__pub-date">{publishedAt}</p>
         <h3 className="card__header">{title}</h3>
