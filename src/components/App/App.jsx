@@ -15,6 +15,8 @@ const App = () => {
   const [savedArticles, setSavedArticles] = useState({});
   const [visibleArticles, setVisableArticles] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
+  const [haveResults, setHaveResults] = useState(null);
+  const [isSearched, setIsSearched] = useState(false);
 
   const handleCardRender = () => {
     if (visibleArticles > newsArticles.length) {
@@ -25,8 +27,11 @@ const App = () => {
 
   const handleSearch = async (keyword) => {
     setIsLoading(true);
+
     try {
       const articleData = await getNews(keyword);
+
+      setHaveResults(articleData.length > 0);
 
       const articleObj = articleData.map((article) => ({
         ...article,
@@ -37,6 +42,7 @@ const App = () => {
       setVisableArticles(0);
       handleCardRender();
       setIsLoading(false);
+      setIsSearched(true)
     } catch (err) {
       console.log(err);
     }
@@ -74,6 +80,7 @@ const App = () => {
               handleOpenLoginModal,
               handleOpenRegisterModal,
               isLoading,
+              isSearched,
             }}
           />
           <Footer />

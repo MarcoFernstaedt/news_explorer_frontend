@@ -9,8 +9,13 @@ import { useOutletContext } from "react-router-dom";
 
 const Main = () => {
   const { newsArticles } = useContext(NewsContext);
-  const { visibleArticles, isLoading, haveResults, handleCardRender } =
-    useOutletContext();
+  const {
+    visibleArticles,
+    isLoading,
+    isSearched,
+    haveResults,
+    handleCardRender,
+  } = useOutletContext();
 
   return (
     <main className="main">
@@ -42,11 +47,11 @@ const Main = () => {
             Show more
           </button>
         </>
-      ) : (
-        <p className="error-message">
+      ) : isSearched ? (
+        <p className="main__error-message">
           No results found. Please try another search.
         </p>
-      )}
+      ) : null}
       <About />
     </main>
   );
