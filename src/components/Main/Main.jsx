@@ -3,15 +3,19 @@ import NewsCard from "../NewsCard/NewsCard";
 import NewsContext from "../../context/NewsContext";
 import { useContext } from "react";
 import About from "../About/About";
+import Preloader from '../Preloader/Preloader';
 import "./Main.css";
 import { useOutletContext } from "react-router-dom";
 
 const Main = () => {
   const { newsArticles } = useContext(NewsContext);
-  const { visibleArticles, handleCardRender } = useOutletContext();
+  const { visibleArticles, isLoading, handleCardRender } = useOutletContext();
 
   return (
     <main className="main">
+      {isLoading && (
+        <Preloader />
+      )}
       <h3
         className={visibleArticles > 0 ? "main__header" : "main__header_hidden_hidden"}
         // className="main__header"
