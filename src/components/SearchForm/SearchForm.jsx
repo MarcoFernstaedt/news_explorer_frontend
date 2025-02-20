@@ -11,12 +11,13 @@ const SearchForm = () => {
   const handleSearchSubmit = (e) => {
     e.preventDefault();
     let keyword = values.search;
-    
+
     if (!keyword) {
       return;
     }
 
     handleSearch(keyword);
+    keyword = "";
   };
 
   return (
