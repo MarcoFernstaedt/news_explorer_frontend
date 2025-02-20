@@ -12,7 +12,7 @@ const Main = () => {
   const {
     visibleArticles,
     isLoading,
-    haveResults,
+    hasSearched,
     handleCardRender,
   } = useOutletContext();
 
@@ -46,7 +46,7 @@ const Main = () => {
             Show more
           </button>
         </>
-      ) : !haveResults ? (
+      ) : hasSearched ? (
         <Preloader haveResults={haveResults} />
       ) : null}
       <About />
