@@ -28,6 +28,11 @@
   }
 }
 
+.circle-preloader_stop-animation {
+  animation: none;
+  border-color: #888;
+}
+
 .preloader__text {
   height: 24px;
   height: 280px;
