@@ -21,7 +21,7 @@ const Main = () => {
     <main className="main">
       {isLoading ? (
         <Preloader />
-      ) : Array.isArray(newsArticles) || newsArticles.length > 0 ? (
+      ) : newsArticles.length > 0 ? (
         <>
           <h3
             className={

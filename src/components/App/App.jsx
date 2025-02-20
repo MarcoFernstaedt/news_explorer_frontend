@@ -11,7 +11,7 @@ import { Outlet } from "react-router-dom";
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [activeModal, setActiveModal] = useState("open");
-  const [newsArticles, setNewsArticles] = useState(null);
+  const [newsArticles, setNewsArticles] = useState({});
   const [savedArticles, setSavedArticles] = useState({});
   const [visibleArticles, setVisableArticles] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
