@@ -46,7 +46,7 @@ const Main = () => {
             Show more
           </button>
         </>
-      ) : haveResults ? (
+      ) : !haveResults ? (
         <Preloader haveResults={haveResults} />
       ) : null}
       <About />
