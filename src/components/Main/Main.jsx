@@ -16,12 +16,12 @@ const Main = () => {
     haveResults,
     handleCardRender,
   } = useOutletContext();
-  
+
   return (
     <main className="main">
       {isLoading ? (
         <Preloader />
-      ) : haveResults ? (
+      ) : newsArticles.length > 0 ? (
         <>
           <h3
             className={
@@ -47,13 +47,7 @@ const Main = () => {
             Show more
           </button>
         </>
-      ) : (
-        isSearched && (
-          <p className="main__error-message">
-            No results found. Please try another search.
-          </p>
-        )
-      )}
+      ) : null}
       <About />
     </main>
   );
