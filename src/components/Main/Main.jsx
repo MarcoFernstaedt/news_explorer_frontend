@@ -47,11 +47,13 @@ const Main = () => {
             Show more
           </button>
         </>
-      ) : isSearched ? (
-        <p className="main__error-message">
-          No results found. Please try another search.
-        </p>
-      ) : null}
+      ) : (
+        isSearched && (
+          <p className="main__error-message">
+            No results found. Please try another search.
+          </p>
+        )
+      )}
       <About />
     </main>
   );

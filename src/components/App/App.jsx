@@ -80,6 +80,7 @@ const App = () => {
               handleOpenLoginModal,
               handleOpenRegisterModal,
               isLoading,
+              haveResults,
               isSearched,
             }}
           />
