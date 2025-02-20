@@ -16,7 +16,7 @@ const Main = () => {
     haveResults,
     handleCardRender,
   } = useOutletContext();
-
+  
   return (
     <main className="main">
       {isLoading ? (
