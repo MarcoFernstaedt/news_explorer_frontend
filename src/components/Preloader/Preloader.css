@@ -1,5 +1,7 @@
 .preloader {
   display: flex;
+  /* height: 100px; */
+  background-color: red;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -35,7 +37,6 @@
 
 .preloader__text {
   height: 24px;
-  height: 280px;
   margin-top: 24px;
   font-family: "Roboto";
   font-weight: 400;
