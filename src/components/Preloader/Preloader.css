@@ -26,3 +26,14 @@
       transform: rotate(360deg);
     }
   }
+
+.preloader__text {
+  height: 24px;
+  height: 280px;
+  margin-top: 24px;
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: #B6BCBF;
+}
