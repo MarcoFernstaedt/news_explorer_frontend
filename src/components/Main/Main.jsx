@@ -47,7 +47,7 @@ const Main = () => {
           </button>
         </>
       ) : hasSearched ? (
-        <Preloader haveResults={haveResults} />
+        <Preloader />
       ) : null}
       <About />
     </main>
