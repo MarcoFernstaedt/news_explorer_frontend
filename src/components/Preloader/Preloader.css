@@ -1,7 +1,5 @@
 .preloader {
   display: flex;
-  /* height: 100px; */
-  background-color: red;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -43,4 +41,9 @@
   font-size: 18px;
   line-height: 24px;
   color: #b6bcbf;
+}
+
+.preloader__text-second-line {
+  display: block;
+  text-align: center;
 }
