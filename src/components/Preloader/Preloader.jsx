@@ -14,7 +14,14 @@ const Preloader = () => {
             : "circle-preloader circle-preloader_stop-animation"
         }
       ></div>
-      <h2 className="preloader__text">
+      {!isLoading && <div className="preloader__alert-message">Nothing Found</div>}
+      <h2
+        className={
+          isLoading
+            ? "preloader__text"
+            : "preloader__text preloader__text-alert-popup"
+        }
+      >
         {isLoading ? (
           "Searching for news..."
         ) : (
