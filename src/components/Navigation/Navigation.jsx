@@ -1,22 +1,29 @@
-import { Link } from "react-router-dom";
-import { useOutletContext } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./Navigation.css";
 
-const Navigation = ({ handleOpenLoginModal, handleOpenRegisterModal, isLoggedIn }) => {
+const Navigation = ({ isLoggedIn, handleOpenLoginModal }) => {
+  const location = useLocation();
+  
   return (
     <nav className="nav">
       <div className="nav__logo">NewsExplorer</div>
       <div className="nav__links">
-        <Link className="nav__link" to="/">
+        <Link
+          to="/"
+          className={`nav__link ${location.pathname === "/" ? "active home-active" : ""}`}
+        >
           Home
         </Link>
+        {isLoggedIn && (
+          <Link
+            to="/saved-news"
+            className={`nav__link ${location.pathname === "/saved-news" ? "active saved-news-active" : ""}`}
+          >
+            Saved articles
+          </Link>
+        )}
         {isLoggedIn ? (
-          <>
-            <Link to="/saved-news" className="nav__link">
-              Saved articles
-            </Link>
-            <button className="nav__link-pill-btn">Elise</button>
-          </>
+          <button className="nav__link-pill-btn">Elise</button>
         ) : (
           <button
             type="button"

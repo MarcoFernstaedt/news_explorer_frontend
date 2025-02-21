@@ -29,15 +29,35 @@
 }
 
 .nav__link {
+  position: relative;
   background-color: transparent;
   text-decoration: none;
   color: inherit;
+  margin-right: 42px;
 }
 
 .nav__link:hover {
   color: inherit;
   padding-bottom: 26px;
-  border-bottom: 3px solid #FFF;
+  cursor: pointer;
+}
+
+.nav__link.active::before {
+  content: "";
+  position: absolute;
+  left: -5px;
+  bottom: -23px;
+  height: 3px;
+  border-radius: 2px;
+  width: 120%;
+}
+
+.nav__link.home-active::before {
+  background-color: #fff;
+}
+
+.nav__link.saved-news-active::before {
+  background-color: #1A1B22; 
 }
 
 .nav__link-pill-btn {
@@ -46,5 +66,4 @@
   border-radius: 100px;
   border: 1px solid #fff;
   background-color: transparent;
-  margin-left: 42px;
 }
