@@ -4,11 +4,7 @@ import SearchForm from "../SearchForm/SearchForm";
 import "./Header.css";
 import { useLocation } from "react-router-dom";
 
-const Header = ({
-  handleOpenLoginModal,
-  handleOpenRegisterModal,
-  isLoggedIn,
-}) => {
+const Header = (handleOpenLoginModal, handleOpenRegisterModal, isLoggedIn) => {
   const location = useLocation();
   const isHome = location.pathname === "/";
 

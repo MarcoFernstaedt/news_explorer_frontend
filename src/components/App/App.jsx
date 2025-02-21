@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 
 const App = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [activeModal, setActiveModal] = useState("open");
   const [newsArticles, setNewsArticles] = useState({});
   const [savedArticles, setSavedArticles] = useState({});
@@ -79,8 +79,6 @@ const App = () => {
             context={{
               visibleArticles,
               handleCardRender,
-              handleOpenLoginModal,
-              handleOpenRegisterModal,
               isLoading,
               hasSearched,
             }}
