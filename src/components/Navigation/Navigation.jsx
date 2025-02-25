@@ -10,14 +10,14 @@ const Navigation = ({ isLoggedIn, handleOpenLoginModal }) => {
       <div className="nav__links">
         <Link
           to="/"
-          className={`nav__link ${location.pathname === "/" ? "active home-active" : ""}`}
+          className={`nav__link ${location.pathname === "/" ? "active nav__link_home" : ""}`}
         >
           Home
         </Link>
         {isLoggedIn && (
           <Link
             to="/saved-news"
-            className={`nav__link ${location.pathname === "/saved-news" ? "active saved-news-active" : ""}`}
+            className={`nav__link ${location.pathname === "/saved-news" ? "active nav__link_saved-news" : ""}`}
           >
             Saved articles
           </Link>
