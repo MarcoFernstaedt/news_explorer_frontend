@@ -2,9 +2,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 80px;
-  /* width: 1440px; */
-  padding: 0 104px;
+  height: 90px;
+  padding: 0px 104px;
   background-color: #fff;
 }
 
@@ -19,14 +18,14 @@
 
 .footer__links {
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 40px;
   text-decoration: none;
   list-style: none;
-  padding: 0;
   width: 163px;
   height: 24px;
   margin-right: 40px;
-  border: 2px solid black;
 }
 
 .footer__link {
@@ -38,6 +37,9 @@
 }
 
 .footer__social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 25.89px;
 }
 
