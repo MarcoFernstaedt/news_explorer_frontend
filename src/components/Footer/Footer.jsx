@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className="footer">
       <p className="footer__copy">&copy; 2024 Supersite, Powered by News API</p>
-      <nav className="footer__links">
+      <ul className="footer__links">
         <li>
           <a className="footer__link" href="#">
             Home
@@ -17,7 +17,7 @@ const Footer = () => {
             TripleTen
           </a>
         </li>
-      </nav>
+      </ul>
       <div className="footer__social-icons">
         <a
           href="https://github.com/MarcoFernstaedt"
