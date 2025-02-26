@@ -16,7 +16,7 @@ const Header = ({handleOpenLoginModal, handleOpenRegisterModal, isLoggedIn}) => 
         isLoggedIn={isLoggedIn}
       />
       <div className={isHome ? "header__hero" : "header__hero_saved-news"}>
-        <p className="header__heading">Saved articles</p>
+        {/* <p className="header__heading">Saved articles</p> */}
         <h1
           className={
             isHome
@@ -37,7 +37,9 @@ const Header = ({handleOpenLoginModal, handleOpenRegisterModal, isLoggedIn}) => 
           }
         >
           {isHome
-            ? "Find the latest news on any topic and save them in your personal account."
+            ? <>
+              Find the latest news on any topic and save them in your <span className="header__sub-title_tablet">personal account.</span>
+            </>
             : "By keywords: "}
         </p>
       </div>
