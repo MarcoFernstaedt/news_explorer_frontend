@@ -17,7 +17,7 @@
 }
 
 .header__hero {
-  margin: 88px 0;
+  margin: 88px auto;
 }
 
 .header__hero_saved-news {
@@ -79,7 +79,9 @@
   }
 
   .header__hero {
-    margin: 38px 0 48px;
+    max-width: 449px;
+    width: 100%;
+    margin: 38px auto 48px;
     padding-bottom: 48px;
   }
 
