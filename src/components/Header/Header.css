@@ -85,6 +85,15 @@
     padding-bottom: 48px;
   }
 
+  .header__hero_saved-news {
+    padding-top: 24px;
+    padding-bottom: 32px;
+  }
+
+  .header__heading {
+    font-size: 14px;
+  }
+
   .header__title_home {
     font-size: 36px;
     line-height: 40px;
@@ -94,5 +103,11 @@
   .header__sub-title_tablet {
     display: block;
     text-align: left;
+  }
+
+  .header__title_saved-news {
+    margin: 16px 0px;
+    font-size: 30px;
+    line-height: 34px;
   }
 }
