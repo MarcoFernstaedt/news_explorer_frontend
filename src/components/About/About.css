@@ -8,7 +8,8 @@
 }
 
 .about__author-image {
-  width: 464px;
+  max-width: 464px;
+  width: 100%;
   height: 464px;
   border-radius: 1000px;
 }
@@ -18,7 +19,8 @@
 }
 
 .about__header {
-  width: 600px;
+  max-width: 600px;
+  width: 100%;
   height: 46px;
   font-family: "Roboto Slab";
   font-weight: 400;
@@ -28,7 +30,8 @@
 }
 
 .about__paragraph {
-  width: 600px;
+  max-width: 600px;
+  width: 100%;
   height: 120px;
   font-weight: 400;
   font-size: 18px;

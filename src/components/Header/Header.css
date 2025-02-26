@@ -39,7 +39,8 @@
 }
 
 .header__title_home {
-  width: 600px;
+  max-width: 600px;
+  width: 100%;
   height: 120px;
   margin: 0 auto 32px;
   font-size: 60px;
@@ -47,7 +48,8 @@
 }
 
 .header__title_saved-news {
-  width: 530px;
+  max-width: 530px;
+  width: 100%;
   height: 92px;
   margin: 28px 0 30px;
   font-size: 40px;
@@ -67,10 +69,11 @@
 
 .header__sub-title_home {
   margin: 0 auto;
-  width: 608px;
+  max-width: 608px;
+  width: 100%;
   height: 24px;
 }
 
-.header__sub-title_saved-news {
-  /* margin-left: 104px; */
-}
+/* .header__sub-title_saved-news {
+  
+} */

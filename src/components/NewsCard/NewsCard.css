@@ -2,14 +2,15 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  width: 400px;
+  max-width: 400px;
+  width: 100%;
   padding: 0;
   background-color: #fff;
   /* background-color: black; */
 }
 
 .card__image {
-  width: 400px;
+  width: 100%;
   height: 272px;
 }
 
@@ -38,7 +39,8 @@
   position: absolute;
   top: 24px;
   right: 24px;
-  width: 40px;
+  max-width: 40px;
+  width: 100%;
   height: 40px;
   border-radius: 10%;
   outline: none;
@@ -88,7 +90,8 @@
 }
 
 .card__pub-date {
-  width: 128px;
+  max-width: 128px;
+  width: 100%;
   height: 24px;
   font-family: "Source Sans Pro";
   font-weight: 400;
@@ -99,7 +102,8 @@
 }
 
 .card__header {
-  width: 352px;
+  max-width: 352px;
+  width: 100%;
   height: 60px;
   font-family: "Roboto Slab";
   font-weight: 400;
@@ -110,7 +114,8 @@
 }
 
 .card__paragraph {
-  width: 352px;
+  max-width: 352px;
+  width: 100%;
   height: 88px;
   font-weight: 400;
   font-size: 16px;
@@ -120,7 +125,8 @@
 }
 
 .card__author {
-  width: 352px;
+  max-width: 352px;
+  width: 100%;
   height: 20px;
   font-family: "Roboto Slab";
   font-weight: 700;
