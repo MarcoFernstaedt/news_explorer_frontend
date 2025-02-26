@@ -41,7 +41,6 @@
 .header__title_home {
   max-width: 600px;
   width: 100%;
-  height: 120px;
   margin: 0 auto 32px;
   font-size: 60px;
   line-height: 64px;
@@ -74,6 +73,24 @@
   height: 24px;
 }
 
-/* .header__sub-title_saved-news {
-  
-} */
+@media (max-width: 760px) {
+  .header {
+    padding-bottom: 48px;
+  }
+
+  .header__hero {
+    margin: 38px 0 48px;
+    padding-bottom: 48px;
+  }
+
+  .header__title_home {
+    font-size: 36px;
+    line-height: 40px;
+    margin-bottom: 16px;
+  }
+
+  .header__sub-title_tablet {
+    display: block;
+    text-align: left;
+  }
+}
