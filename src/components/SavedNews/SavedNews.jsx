@@ -47,7 +47,6 @@ const SavedNews = () => {
     },
   ];
 
-  console.log(newsArticles);
   return (
     <ul className="saved-news">
       {newsArticles.map((article, index) => (
