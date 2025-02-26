@@ -7,9 +7,9 @@
 }
 
 .main__header {
-  max-width: 712px;
+  /* max-width: 712px;
   width: 100%;
-  height: 46px;
+  height: 46px; */
   font-weight: 400;
   font-size: 40px;
   line-height: 46px;
@@ -42,6 +42,10 @@
   background-color: #fff;
   margin: 0 auto 40px;
   color: #1a1822;
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .main__button:hover {
@@ -51,4 +55,16 @@
 .main__button_inactive {
   background-color: #e6e8eb;
   color: #b6bcbf;
+}
+
+@media (max-width: 760px) {
+  .main__card-wrap {
+    border-bottom: 32px;
+  } 
+
+  .main__button {
+    max-width: 240px;
+    width: 100%;
+    height: 56px;
+  }
 }
