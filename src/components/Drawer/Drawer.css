@@ -1,0 +1,24 @@
+.drawer {
+    display: none;
+}
+
+@keyframes slide-from-top {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-100%);
+    }
+  }
+
+@media screen and (max-width: 320px) {
+    .drawer {
+        display: fixed;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        height: 400px;
+        background-color: black;
+        animation: slide-from-top .3s ease-in-out;
+    }
+}
