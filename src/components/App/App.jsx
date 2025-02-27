@@ -1,16 +1,17 @@
 import Header from "../Header/Header";
 import NewsContext from "../../context/NewsContext.jsx";
 import Footer from "../Footer/Footer";
+import Drawer from "../Drawer/Drawer.jsx";
 import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import getNews from "../../utils/newsApi.jsx";
 import "./App.css";
-import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
+import { useState } from "react";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
-  const [activeModal, setActiveModal] = useState("open");
+  const [activeModal, setActiveModal] = useState("drawer");
   const [newsArticles, setNewsArticles] = useState({});
   const [savedArticles, setSavedArticles] = useState({});
   const [visibleArticles, setVisableArticles] = useState(0);
@@ -37,7 +38,7 @@ const App = () => {
       }));
 
       if (!hasSearched) {
-        setHasSearched(true)
+        setHasSearched(true);
       }
 
       setNewsArticles(articleObj);
@@ -48,6 +49,10 @@ const App = () => {
     } finally {
       setIsLoading(false);
     }
+  };
+
+  const handleDrawerOpen = () => {
+    setActiveModal("drawer");
   };
 
   const handleOpenLoginModal = () => {
@@ -85,6 +90,9 @@ const App = () => {
           />
           <Footer />
         </div>
+        {activeModal === "drawer" && (
+          <Drawer handleDrawerOpen={handleDrawerOpen} isLoggedIn={isLoggedIn} />
+        )}
         {activeModal === "login" && (
           <LoginModal
             title="Sign in"
