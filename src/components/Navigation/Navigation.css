@@ -68,6 +68,10 @@
   background-color: transparent;
 }
 
+.nav__menu-btn {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .nav {
     height: 66px;
@@ -76,5 +80,24 @@
 
   .nav__links {
     font-size: 16px;
+  }
+}
+
+@media (max-width: 320px) {
+  .nav {
+    height: 56px;
+    padding: 0 16px;
+  }
+
+  .nav__logo {
+    font-size: 16px;
+  }
+
+  .nav__links {
+    display: none;
+  }
+
+  .nav__menu-btn {
+    display: block;
   }
 }

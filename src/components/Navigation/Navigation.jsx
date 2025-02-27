@@ -34,6 +34,7 @@ const Navigation = ({ isLoggedIn, handleOpenLoginModal }) => {
           </button>
         )}
       </div>
+      <button type='button' className='nav__menu-btn'></button>
     </nav>
   );
 };
