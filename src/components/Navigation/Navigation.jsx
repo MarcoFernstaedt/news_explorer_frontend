@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import "./Navigation.css";
 
-const Navigation = ({ isLoggedIn, handleOpenLoginModal }) => {
+const Navigation = ({ isLoggedIn, handleOpenLoginModal, handleDrawerOpen }) => {
   const location = useLocation();
   
   return (
@@ -34,7 +34,7 @@ const Navigation = ({ isLoggedIn, handleOpenLoginModal }) => {
           </button>
         )}
       </div>
-      <button type='button' className='nav__menu-btn'></button>
+      <button onClick={handleDrawerOpen} type='button' className='nav__menu-btn'></button>
     </nav>
   );
 };
