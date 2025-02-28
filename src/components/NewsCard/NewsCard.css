@@ -77,7 +77,7 @@
 .card__alert-popup {
   box-sizing: border-box;
   height: 40px;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   position: absolute;
@@ -92,6 +92,10 @@
   font-weight: 500;
   font-size: 12px;
   line-height: 14px;
+}
+
+.card__btn:hover + .card__alert-popup {
+  display: flex;
 }
 
 .card__pub-date {
