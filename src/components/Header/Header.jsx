@@ -4,7 +4,12 @@ import SearchForm from "../SearchForm/SearchForm";
 import "./Header.css";
 import { useLocation } from "react-router-dom";
 
-const Header = ({handleOpenLoginModal, handleOpenRegisterModal, isLoggedIn}) => {
+const Header = ({
+  handleOpenLoginModal,
+  handleOpenRegisterModal,
+  isLoggedIn,
+  handleDrawerOpen,
+}) => {
   const location = useLocation();
   const isHome = location.pathname === "/";
 
@@ -14,6 +19,7 @@ const Header = ({handleOpenLoginModal, handleOpenRegisterModal, isLoggedIn}) => 
         handleOpenLoginModal={handleOpenLoginModal}
         handleOpenRegisterModal={handleOpenRegisterModal}
         isLoggedIn={isLoggedIn}
+        handleDrawerOpen={handleDrawerOpen}
       />
       <div className={isHome ? "header__hero" : "header__hero_saved-news"}>
         {/* <p className="header__heading">Saved articles</p> */}
@@ -36,11 +42,16 @@ const Header = ({handleOpenLoginModal, handleOpenRegisterModal, isLoggedIn}) => 
               : "header__sub-title_saved-news"
           }
         >
-          {isHome
-            ? <>
-              Find the latest news on any topic and save them in your <span className="header__sub-title_tablet">personal account.</span>
+          {isHome ? (
+            <>
+              Find the latest news on any topic and save them in your{" "}
+              <span className="header__sub-title_tablet">
+                personal account.
+              </span>
             </>
-            : "By keywords: "}
+          ) : (
+            "By keywords: "
+          )}
         </p>
       </div>
       {isHome && <SearchForm />}
