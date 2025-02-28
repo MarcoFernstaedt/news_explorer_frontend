@@ -10,7 +10,7 @@ import { Outlet } from "react-router-dom";
 import { useState } from "react";
 
 const App = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [activeModal, setActiveModal] = useState("drawer");
   const [newsArticles, setNewsArticles] = useState({});
   const [savedArticles, setSavedArticles] = useState({});
@@ -79,6 +79,7 @@ const App = () => {
             handleOpenLoginModal={handleOpenLoginModal}
             handleOpenRegisterModal={handleOpenRegisterModal}
             isLoggedIn={isLoggedIn}
+            handleDrawerOpen={handleDrawerOpen}
           />
           <Outlet
             context={{
@@ -91,7 +92,7 @@ const App = () => {
           <Footer />
         </div>
         {activeModal === "drawer" && (
-          <Drawer handleDrawerOpen={handleDrawerOpen} isLoggedIn={isLoggedIn} />
+          <Drawer handleCloseModal={handleCloseModal} handleOpenLoginModal={handleOpenLoginModal} isLoggedIn={isLoggedIn} />
         )}
         {activeModal === "login" && (
           <LoginModal
