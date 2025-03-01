@@ -13,22 +13,26 @@ const NewsCard = ({
   author,
 }) => {
   const [isSaved, setIsSaved] = useState(false);
-  const location = useLocation();
-  const savedNewsPage = location.pathname === "/saved-news";
+  const location = useLocation().pathname;
+  // const savedNewsPage = location.pathname === "/saved-news";
 
   return (
     <li className="card">
       <img src={urlToImage} alt="Card image" className="card__image" />
-      {savedNewsPage && <div className="card__tag">{keyword}</div>}
-      <div className="card__alert-popup">{!savedNewsPage ? 'Signin to save article' : 'Remove from saved'}</div>
+      {location === '/saved-news' && <div className="card__tag">{keyword}</div>}
       <button
         type="button"
         className={
-          savedNewsPage
+          location === '/saved-news'
             ? "card__btn card__delete-btn"
             : "card__btn card__save-btn"
         }
       ></button>
+      {!isLoggedIn && location === '/' ? (
+        <div className="card__alert-popup">Signin to save article</div>
+      ) : location === '/saed-news' ? (
+        <div className="card__alert-popup">Remove from saved</div>
+      ) : null}
       <div className="card__content">
         <p className="card__pub-date">{publishedAt}</p>
         <h3 className="card__header">{title}</h3>
