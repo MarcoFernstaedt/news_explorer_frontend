@@ -21,28 +21,37 @@ const SearchForm = () => {
   };
 
   return (
-    <form className="search-form">
-      <input
-        className="search-form__input"
-        type="text"
-        placeholder="Enter topic"
-        name="search"
-        id="search"
-        value={values.search || ""}
-        onChange={handleChange}
-        aria-label="Search topic"
-        minLength="2"
-        maxLength="30"
-        required
-      />
+    <>
+      <form className="search-form">
+        <input
+          className="search-form__input"
+          type="text"
+          placeholder="Enter topic"
+          name="search"
+          id="search"
+          value={values.search || ""}
+          onChange={handleChange}
+          aria-label="Search topic"
+          minLength="2"
+          maxLength="30"
+          required
+        />
+        <button
+          onClick={handleSearchSubmit}
+          className="search-form__btn"
+          type="submit"
+        >
+          Search
+        </button>
+      </form>
       <button
         onClick={handleSearchSubmit}
-        className="search-form__btn"
+        className="search-form__btn_mobile"
         type="submit"
       >
         Search
       </button>
-    </form>
+    </>
   );
 };
 
