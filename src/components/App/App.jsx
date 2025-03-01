@@ -86,6 +86,7 @@ const App = () => {
               visibleArticles,
               handleCardRender,
               isLoading,
+              isLoggedIn,
               hasSearched,
             }}
           />
