@@ -11,7 +11,7 @@ import { useState } from "react";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [activeModal, setActiveModal] = useState("drawer");
+  const [activeModal, setActiveModal] = useState("");
   const [newsArticles, setNewsArticles] = useState({});
   const [savedArticles, setSavedArticles] = useState({});
   const [visibleArticles, setVisableArticles] = useState(0);
