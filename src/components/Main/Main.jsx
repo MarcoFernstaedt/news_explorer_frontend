@@ -11,6 +11,7 @@ const Main = () => {
   const { newsArticles } = useContext(NewsContext);
   const {
     visibleArticles,
+    isLoggedIn,
     isLoading,
     hasSearched,
     handleCardRender,
@@ -35,7 +36,7 @@ const Main = () => {
             }
           >
             {newsArticles.slice(0, visibleArticles).map((article, index) => (
-              <NewsCard key={index} {...article} />
+              <NewsCard key={index} isLoggedIn={isLoggedIn} {...article} />
             ))}
           </ul>
           <button
