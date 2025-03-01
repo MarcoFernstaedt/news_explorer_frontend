@@ -113,12 +113,7 @@
 }
 
 @media screen and (max-width: 320px) {
-  .header {
-    justify-content: center;
-  }
   .header__hero {
-    /* max-width: 285px;
-    width: 100%; */
     padding-left: 16px;
     margin: 30px 0 122px;
   }
