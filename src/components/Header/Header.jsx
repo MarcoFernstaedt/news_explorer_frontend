@@ -46,7 +46,8 @@ const Header = ({
             <>
               Find the latest news on any topic and save them in your{" "}
               <span className="header__sub-title_tablet">
-                personal account.
+                personal 
+                <span className="header__sub-title_mobile">account.</span>
               </span>
             </>
           ) : (
