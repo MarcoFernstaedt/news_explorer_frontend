@@ -73,3 +73,15 @@
     height: 56px;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .main {
+    padding: 32px 16px 40px;
+  }
+  .main__card-wrap {
+    background-color: black;
+    justify-content: center;
+    margin-top: 58px;
+    margin-bottom: 21px;
+  }
+}
