@@ -1,6 +1,6 @@
 import React from "react";
 import NewsContext from "../../context/NewsContext.jsx";
-import { useForm } from "../../hooks/useForm";
+import useForm from "../../hooks/useForm";
 import { useContext } from "react";
 import "./SearchForm.css";
 

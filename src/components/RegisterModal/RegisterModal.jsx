@@ -1,5 +1,5 @@
 import React from "react";
-import { useForm } from "../../hooks/useForm";
+import useForm from "../../hooks/useForm";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
 const RegisterModal = ({
