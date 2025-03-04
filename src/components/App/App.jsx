@@ -10,7 +10,7 @@ import "./App.css";
 import { Outlet } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { signUp, signIn, checkToken } from "../../utils/auth.jsx";
-import getSavedArticles from "../../utils/api.jsx";
+import getArticles from "../../utils/api.jsx";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
@@ -42,20 +42,14 @@ const App = () => {
     setIsLoggedIn(response.loggedIn);
   };
 
-  const fetchSavedArticles = async () => {
-    const articles = await getSavedArticles();
+  const fetchArticles = async () => {
+    const articles = await getArticles();
     localStorage.setItem("savedArticles", JSON.stringify(articles));
     setSavedArticles(articles);
   };
 
-  const saveArticle = ({ _id, isSaved, article }) => {
-    if (isSaved) {
-      // Add article if not already saved
-      setSavedArticles(prev => [...prev, article]); 
-    } else {
-      // Remove article if isSaved is false
-      setSavedArticles(prev => prev.filter(a => a._id !== _id));
-    }
+  const handleSaveArticle = ({ _id, isSaved, article }) => {
+    
   };
 
   const handleCardRender = () => {
@@ -114,15 +108,15 @@ const App = () => {
       checkToken(token).then((reponse) => {
         if (reponse.isLoggedIn) {
           setIsLoggedIn();
-          fetchSavedArticles();
+          fetchArticles();
         }
       });
     }
   }, []);
 
   useEffect(() => {
-    const storedSavedArticles = localStorage.getItem("savedArticles");
-    if (storedSavedArticles) setSavedArticles(JSON.parse(storedSavedArticles));
+    const storedArticles = localStorage.getItem("newsArticles");
+    if (storedArticles) setSavedArticles(JSON.parse(storedArticles));
   }, []);
 
   return (

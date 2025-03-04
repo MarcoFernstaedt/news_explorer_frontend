@@ -18,12 +18,14 @@ const NewsCard = ({
   const [marked, setIsMarked] = useState(false);
   const location = useLocation().pathname;
 
-  const handleCardClassElem = `card__btn ${
-    isSaved ? "card__save-btn_marked" : "card__save-btn"
-  }`;
+  const handleCardClassElem = `card__btn ${marked ? "card__save-btn_marked" : "card__save-btn"}`;
 
   const handleSaveArticles = () => {
-    
+    if (!isLoggedIn) return;
+
+    const updatedSavedState = !isSaved; // Toggle isSaved
+
+    // saveArticle({ _id, isSaved: updatedSavedState, article: { _id, title, urlToImage, keyword, content, publishedAt, author } });
   };
 
   return (
