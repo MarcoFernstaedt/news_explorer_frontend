@@ -1,5 +1,6 @@
 import Header from "../Header/Header";
 import NewsContext from "../../context/NewsContext.jsx";
+import UserContext from "../../context/UserContext.jsx";
 import Footer from "../Footer/Footer";
 import Drawer from "../Drawer/Drawer.jsx";
 import LoginModal from "../LoginModal/LoginModal";
@@ -8,11 +9,12 @@ import getNews from "../../utils/newsApi.jsx";
 import "./App.css";
 import { Outlet } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { signUp, signIn, checkToken } from '../../utils/auth.jsx';
-import getSavedArticles from '../../utils/api.jsx';
+import { signUp, signIn, checkToken } from "../../utils/auth.jsx";
+import getSavedArticles from "../../utils/api.jsx";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [currentUser, setCurrentUser] = useState({});
   const [activeModal, setActiveModal] = useState("");
   const [newsArticles, setNewsArticles] = useState({});
   const [savedArticles, setSavedArticles] = useState({});
@@ -23,7 +25,7 @@ const App = () => {
   const handleSignUp = async (email, password) => {
     await signUp(email, password);
   };
-  
+
   const handleSignIn = async (email, password) => {
     try {
       const response = await signIn(email, password);
@@ -33,16 +35,16 @@ const App = () => {
       console.error(err);
     }
   };
-  
+
   const handleCheckToken = async () => {
     const token = localStorage.getItem("token");
     const response = await checkToken(token);
     setIsLoggedIn(response.loggedIn);
   };
-  
+
   const fetchSavedArticles = async () => {
     const articles = await getSavedArticles();
-    localStorage.setItem('savedArticles', JSON.stringify(articles))
+    localStorage.setItem("savedArticles", JSON.stringify(articles));
     setSavedArticles(articles);
   };
 
@@ -95,63 +97,68 @@ const App = () => {
   };
 
   useEffect(() => {
-    const token = localStorage.getItem('token')
+    const token = localStorage.getItem("token");
     if (token) {
       checkToken(token).then((reponse) => {
         if (reponse.isLoggedIn) {
-          setIsLoggedIn()
-          fetchSavedArticles()
+          setIsLoggedIn();
+          fetchSavedArticles();
         }
-      })
+      });
     }
-  }, [])
+  }, []);
 
   useEffect(() => {
-    const storedSavedArticles = localStorage.getItem('savedArticles')
-    if (storedSavedArticles) setSavedArticles(JSON.parse(storedSavedArticles))
-  }, [])
+    const storedSavedArticles = localStorage.getItem("savedArticles");
+    if (storedSavedArticles) setSavedArticles(JSON.parse(storedSavedArticles));
+  }, []);
 
   return (
     <div className="app">
-      <NewsContext.Provider value={{ newsArticles, handleSearch }}>
-        <div className="page">
-          <Header
-            handleOpenLoginModal={handleOpenLoginModal}
-            handleOpenRegisterModal={handleOpenRegisterModal}
-            isLoggedIn={isLoggedIn}
-            handleDrawerOpen={handleDrawerOpen}
-          />
-          <Outlet
-            context={{
-              visibleArticles,
-              handleCardRender,
-              isLoading,
-              isLoggedIn,
-              hasSearched,
-            }}
-          />
-          <Footer />
-        </div>
-        {activeModal === "drawer" && (
-          <Drawer handleCloseModal={handleCloseModal} handleOpenLoginModal={handleOpenLoginModal} isLoggedIn={isLoggedIn} />
-        )}
-        {activeModal === "login" && (
-          <LoginModal
-            title="Sign in"
-            buttonText="Sign In"
-            secondaryBtnText="Sign up"
-            onClose={handleCloseModal}
-          />
-        )}
-        {activeModal === "register" && (
-          <RegisterModal
-            title="Sign in"
-            buttonText="Sign up"
-            secondaryBtnText="Login in"
-            onClose={handleCloseModal}
-          />
-        )}
-      </NewsContext.Provider>
+      <UserContext.Provider value={{ currentUser, isLoggedIn }}>
+        <NewsContext.Provider value={{ newsArticles, handleSearch }}>
+          <div className="page">
+            <Header
+              handleOpenLoginModal={handleOpenLoginModal}
+              handleOpenRegisterModal={handleOpenRegisterModal}
+              handleSearch={handleSearch}
+              handleDrawerOpen={handleDrawerOpen}
+            />
+            <Outlet
+              context={{
+                visibleArticles,
+                handleCardRender,
+                isLoading,
+                hasSearched,
+              }}
+            />
+            <Footer />
+          </div>
+          {activeModal === "drawer" && (
+            <Drawer
+              handleCloseModal={handleCloseModal}
+              handleOpenLoginModal={handleOpenLoginModal}
+              isLoggedIn={isLoggedIn}
+            />
+          )}
+          {activeModal === "login" && (
+            <LoginModal
+              title="Sign in"
+              buttonText="Sign In"
+              secondaryBtnText="Sign up"
+              onClose={handleCloseModal}
+            />
+          )}
+          {activeModal === "register" && (
+            <RegisterModal
+              title="Sign in"
+              buttonText="Sign up"
+              secondaryBtnText="Login in"
+              onClose={handleCloseModal}
+            />
+          )}
+        </NewsContext.Provider>
+      </UserContext.Provider>
     </div>
   );
 };

@@ -1,7 +1,9 @@
-import { Navigate, useOutletContext } from "react-router-dom";
+import { useContext } from "react";
+import { Navigate } from "react-router-dom";
+import UserContext from "../context/UserContext";
 
 const ProtectedRoute = ({ element }) => {
-  const { isLoggedIn } = useOutletContext(); // Get login state
+  const { isLoggedIn } = useContext(UserContext); 
 
   return isLoggedIn ? element : <Navigate to="/" replace />;
 };

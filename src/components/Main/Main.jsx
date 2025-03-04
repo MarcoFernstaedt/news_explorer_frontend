@@ -6,16 +6,17 @@ import About from "../About/About";
 import Preloader from "../Preloader/Preloader";
 import "./Main.css";
 import { useOutletContext } from "react-router-dom";
+import UserContext from "../../context/UserContext";
 
 const Main = () => {
   const { newsArticles } = useContext(NewsContext);
   const {
     visibleArticles,
-    isLoggedIn,
     isLoading,
     hasSearched,
     handleCardRender,
   } = useOutletContext();
+  const { isLoggedIn } = useContext(UserContext)
 
   return (
     <main className="main">

@@ -1,15 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import Navigation from "../Navigation/Navigation";
 import SearchForm from "../SearchForm/SearchForm";
 import "./Header.css";
 import { useLocation } from "react-router-dom";
+import UserContext from "../../context/UserContext.jsx";
 
 const Header = ({
   handleOpenLoginModal,
   handleOpenRegisterModal,
-  isLoggedIn,
+  handleSearch,
   handleDrawerOpen,
 }) => {
+  const { isLoggedIn } = useContext(UserContext);
   const location = useLocation();
   const isHome = location.pathname === "/";
 
@@ -46,7 +48,7 @@ const Header = ({
             <>
               Find the latest news on any topic and save them in your{" "}
               <span className="header__sub-title_tablet">
-                personal 
+                personal
                 <span className="header__sub-title_mobile">account.</span>
               </span>
             </>

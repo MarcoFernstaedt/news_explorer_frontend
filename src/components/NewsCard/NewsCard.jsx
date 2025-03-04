@@ -12,9 +12,12 @@ const NewsCard = ({
   publishedAt,
   author,
 }) => {
-  const [isSaved, setIsSaved] = useState(false);
+  const { isSaved, setIsSaved} = useState(false)
   const location = useLocation().pathname;
-  // const savedNewsPage = location.pathname === "/saved-news";
+  
+  const handleSaveArticles = () => {
+    setIsSaved(!isSaved);
+  }
 
   return (
     <li className="card">
@@ -22,10 +25,11 @@ const NewsCard = ({
       {location === '/saved-news' && <div className="card__tag">{keyword}</div>}
       <button
         type="button"
+        onClick={handleSaveArticles}
         className={
           location === '/saved-news'
             ? "card__btn card__delete-btn"
-            : "card__btn card__save-btn"
+            : `card__btn ${isSaved ? 'card__save-btn_marked' : 'card__save-btn'}`
         }
       ></button>
       {!isLoggedIn && location === '/' ? (

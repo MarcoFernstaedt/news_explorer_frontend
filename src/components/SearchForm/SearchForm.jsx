@@ -4,8 +4,7 @@ import useForm from "../../hooks/useForm";
 import { useContext } from "react";
 import "./SearchForm.css";
 
-const SearchForm = () => {
-  const { handleSearch } = useContext(NewsContext);
+const SearchForm = ({handleSearch}) => {
   const { values, handleChange } = useForm({});
 
   const handleSearchSubmit = (e) => {
