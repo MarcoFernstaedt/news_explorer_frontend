@@ -49,7 +49,13 @@ const App = () => {
   };
 
   const handleSaveArticle = ({ _id, isSaved, article }) => {
-    
+    if (isSaved) {
+      // Add article if not already saved
+      setSavedArticles(prev => [...prev, article]); 
+    } else {
+      // Remove article if isSaved is false
+      setSavedArticles(prev => prev.filter(a => a._id !== _id));
+    }
   };
 
   const handleCardRender = () => {
