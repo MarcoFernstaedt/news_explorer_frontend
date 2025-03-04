@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import cardImage from "../../assets/card-image.jpeg";
-import { useLocation } from "react-router-dom";
+import { useLocation, useOutletContext } from "react-router-dom";
 import "./NewsCard.css";
 import UserContext from "../../context/UserContext";
 
@@ -15,6 +15,7 @@ const NewsCard = ({
   author,
 }) => {
   const { isLoggedIn } = useContext(UserContext);
+  const { handleSaveArticle } = useOutletContext();
   const [marked, setIsMarked] = useState(false);
   const location = useLocation().pathname;
 
@@ -22,10 +23,23 @@ const NewsCard = ({
 
   const handleSaveArticles = () => {
     if (!isLoggedIn) return;
-
-    const updatedSavedState = !isSaved; // Toggle isSaved
-
-    // saveArticle({ _id, isSaved: updatedSavedState, article: { _id, title, urlToImage, keyword, content, publishedAt, author } });
+  
+    // Toggle the marked state
+    setIsMarked(prevMarked => !prevMarked);
+  
+    const updatedArticle = {
+      _id,
+      isSaved: marked,
+      title,
+      urlToImage,
+      keyword,
+      content,
+      publishedAt,
+      author
+    };
+  
+    // Call the function to save/remove the article
+    handleSaveArticle({ _id, isSaved: marked, article: updatedArticle });
   };
 
   return (
