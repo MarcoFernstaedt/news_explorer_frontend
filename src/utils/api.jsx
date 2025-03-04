@@ -31,7 +31,11 @@ const articles = [
 // }
 
 const getArticles = async () => {
-  return articles;
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(articles)
+    }, 500)
+  })
 };
 
 let savedArticles = []; // Simulated backend storage
