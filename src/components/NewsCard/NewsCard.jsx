@@ -24,12 +24,13 @@ const NewsCard = ({
   const handleSaveArticles = () => {
     if (!isLoggedIn) return;
   
+    const updateMarked = !marked
     // Toggle the marked state
-    setIsMarked(prevMarked => !prevMarked);
+    setIsMarked(updateMarked);
   
     const updatedArticle = {
       _id,
-      isSaved: marked,
+      isSaved: updateMarked,
       title,
       urlToImage,
       keyword,
@@ -39,7 +40,7 @@ const NewsCard = ({
     };
   
     // Call the function to save/remove the article
-    handleSaveArticle({ _id, isSaved: marked, article: updatedArticle });
+    handleSaveArticle({ _id, isSaved: updateMarked, article: updatedArticle });
   };
 
   return (
