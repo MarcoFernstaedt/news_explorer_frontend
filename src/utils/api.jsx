@@ -1,4 +1,4 @@
-const savedArticles = [
+const articles = [
   {
     isSaved: true,
     title: "Breaking News: Tech Innovation in 2024",
@@ -31,7 +31,24 @@ const savedArticles = [
 // }
 
 const getArticles = async () => {
-  return savedArticles;
+  return articles;
 };
 
-export default getArticles;
+let savedArticles = []; // Simulated backend storage
+
+const saveArticles = async ({ _id, isSaved, article }) => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      if (isSaved) {
+        // Add the article
+        savedArticles = [...savedArticles, article];
+      } else {
+        // Remove the article
+        savedArticles = savedArticles.filter((a) => a._id !== _id);
+      }
+      resolve(savedArticles); // Return updated saved articles
+    }, 500); // Simulate API delay
+  });
+};
+
+export { getArticles, saveArticles };
