@@ -45,6 +45,8 @@ const App = () => {
   const fetchArticles = async () => {
     const articles = await getArticles();
     localStorage.setItem("savedArticles", JSON.stringify(articles));
+    console.log('fetch')
+    console.log(articles)
     setSavedArticles(articles);
   };
 
@@ -120,7 +122,7 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    const storedArticles = localStorage.getItem("newsArticles");
+    const storedArticles = localStorage.getItem("savedsArticles");
     if (storedArticles) setSavedArticles(JSON.parse(storedArticles));
   }, []);
 
