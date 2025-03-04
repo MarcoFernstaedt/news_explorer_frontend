@@ -20,7 +20,6 @@ const Header = ({
       <Navigation
         handleOpenLoginModal={handleOpenLoginModal}
         handleOpenRegisterModal={handleOpenRegisterModal}
-        isLoggedIn={isLoggedIn}
         handleDrawerOpen={handleDrawerOpen}
       />
       <div className={isHome ? "header__hero" : "header__hero_saved-news"}>
@@ -57,7 +56,7 @@ const Header = ({
           )}
         </p>
       </div>
-      {isHome && <SearchForm />}
+      {isHome && <SearchForm handleSearch={handleSearch} />}
     </div>
   );
 };

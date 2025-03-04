@@ -1,5 +1,6 @@
 const savedArticles = [
   {
+    isSaved: true,
     title: "Breaking News: Tech Innovation in 2024",
     urlToImage: "https://via.placeholder.com/300",
     keyword: "Technology",
@@ -9,6 +10,7 @@ const savedArticles = [
     author: "John Doe",
   },
   {
+    isSaved: true,
     title: "Finance: Stock Market Hits Record Highs",
     urlToImage: "https://via.placeholder.com/300",
     keyword: "Finance",
@@ -16,7 +18,7 @@ const savedArticles = [
     pubDate: "2024-02-08",
     author: "Michael Johnson",
   },
-];
+].map((article) => ({ ...article, _id: crypto.randomUUID() }));
 
 export const getSavedArticles = async () => {
   return savedArticles;

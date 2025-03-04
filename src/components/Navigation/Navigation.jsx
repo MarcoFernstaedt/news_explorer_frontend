@@ -1,7 +1,10 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, UNSAFE_getPatchRoutesOnNavigationFunction, useLocation } from "react-router-dom";
 import "./Navigation.css";
+import { useContext } from "react";
+import UserContext from "../../context/UserContext";
 
-const Navigation = ({ isLoggedIn, handleOpenLoginModal, handleDrawerOpen }) => {
+const Navigation = ({ handleOpenLoginModal, handleDrawerOpen }) => {
+  const { isLoggedIn} = useContext(UserContext)
   const location = useLocation();
   
   return (
