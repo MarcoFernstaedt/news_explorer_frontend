@@ -1,9 +1,9 @@
-import React from "react";
-import { useOutletContext } from "react-router-dom";
+import React, { useContext } from "react";
 import "./preloader.css";
+import UserContext from "../../context/UserContext";
 
 const Preloader = () => {
-  const { isLoading } = useOutletContext();
+  const { isLoading } = useContext(UserContext);
 
   return (
     <div className="preloader">
