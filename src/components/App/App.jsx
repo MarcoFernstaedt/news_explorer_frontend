@@ -7,7 +7,9 @@ import RegisterModal from "../RegisterModal/RegisterModal";
 import getNews from "../../utils/newsApi.jsx";
 import "./App.css";
 import { Outlet } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { signUp, signIn, checkToken } from '../../utils/auth.jsx';
+import getSavedArticles from '../../utils/api.jsx';
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -17,7 +19,32 @@ const App = () => {
   const [visibleArticles, setVisableArticles] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
   const [hasSearched, setHasSearched] = useState(false);
-  // const [haveResults, setHaveResults] = useState(false);
+
+  const handleSignUp = async (email, password) => {
+    await signUp(email, password);
+  };
+  
+  const handleSignIn = async (email, password) => {
+    try {
+      const response = await signIn(email, password);
+      localStorage.setItem("token", response.token);
+      setIsLoggedIn(true);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+  
+  const handleCheckToken = async () => {
+    const token = localStorage.getItem("token");
+    const response = await checkToken(token);
+    setIsLoggedIn(response.loggedIn);
+  };
+  
+  const fetchSavedArticles = async () => {
+    const articles = await getSavedArticles();
+    localStorage.setItem('savedArticles', JSON.stringify(articles))
+    setSavedArticles(articles);
+  };
 
   const handleCardRender = () => {
     if (visibleArticles > newsArticles.length) {
@@ -67,9 +94,22 @@ const App = () => {
     setActiveModal("");
   };
 
-  // useEffect(() => {
-  //   console.log(newsArticles)
-  // }, [newsArticles])
+  useEffect(() => {
+    const token = localStorage.getItem('token')
+    if (token) {
+      checkToken(token).then((reponse) => {
+        if (reponse.isLoggedIn) {
+          setIsLoggedIn()
+          fetchSavedArticles()
+        }
+      })
+    }
+  }, [])
+
+  useEffect(() => {
+    const storedSavedArticles = localStorage.getItem('savedArticles')
+    if (storedSavedArticles) setSavedArticles(JSON.parse(storedSavedArticles))
+  }, [])
 
   return (
     <div className="app">
