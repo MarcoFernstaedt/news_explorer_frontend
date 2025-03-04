@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import cardImage from "../../assets/card-image.jpeg";
 import { useLocation } from "react-router-dom";
 import "./NewsCard.css";
+import UserContext from "../../context/UserContext";
 
 const NewsCard = ({
-  isLoggedIn,
+  _id,
+  isSaved,
   title,
   urlToImage,
   keyword,
@@ -12,29 +14,34 @@ const NewsCard = ({
   publishedAt,
   author,
 }) => {
-  const { isSaved, setIsSaved} = useState(false)
+  const { isLoggedIn } = useContext(UserContext);
+  const [marked, setIsMarked] = useState(false);
   const location = useLocation().pathname;
-  
+
+  const handleCardClassElem = `card__btn ${
+    isSaved ? "card__save-btn_marked" : "card__save-btn"
+  }`;
+
   const handleSaveArticles = () => {
-    setIsSaved(!isSaved);
-  }
+    
+  };
 
   return (
     <li className="card">
       <img src={urlToImage} alt="Card image" className="card__image" />
-      {location === '/saved-news' && <div className="card__tag">{keyword}</div>}
+      {location === "/saved-news" && <div className="card__tag">{keyword}</div>}
       <button
         type="button"
         onClick={handleSaveArticles}
         className={
-          location === '/saved-news'
+          location === "/saved-news"
             ? "card__btn card__delete-btn"
-            : `card__btn ${isSaved ? 'card__save-btn_marked' : 'card__save-btn'}`
+            : handleCardClassElem
         }
       ></button>
-      {!isLoggedIn && location === '/' ? (
+      {!isLoggedIn && location === "/" ? (
         <div className="card__alert-popup">Signin to save article</div>
-      ) : location === '/saed-news' ? (
+      ) : location === "/saed-news" ? (
         <div className="card__alert-popup">Remove from saved</div>
       ) : null}
       <div className="card__content">

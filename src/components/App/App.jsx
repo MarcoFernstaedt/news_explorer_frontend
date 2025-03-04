@@ -13,7 +13,7 @@ import { signUp, signIn, checkToken } from "../../utils/auth.jsx";
 import getSavedArticles from "../../utils/api.jsx";
 
 const App = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [currentUser, setCurrentUser] = useState({});
   const [activeModal, setActiveModal] = useState("");
   const [newsArticles, setNewsArticles] = useState({});
@@ -48,6 +48,16 @@ const App = () => {
     setSavedArticles(articles);
   };
 
+  const saveArticle = ({ _id, isSaved, article }) => {
+    if (isSaved) {
+      // Add article if not already saved
+      setSavedArticles(prev => [...prev, article]); 
+    } else {
+      // Remove article if isSaved is false
+      setSavedArticles(prev => prev.filter(a => a._id !== _id));
+    }
+  };
+
   const handleCardRender = () => {
     if (visibleArticles > newsArticles.length) {
       setVisableArticles(newsArticles.length);
@@ -62,6 +72,8 @@ const App = () => {
       const articleData = await getNews(keyword);
 
       const articleObj = articleData.map((article) => ({
+        _id: crypto.randomUUID(),
+        isSaved: false,
         ...article,
         keyword,
       }));

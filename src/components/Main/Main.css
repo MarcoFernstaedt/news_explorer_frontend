@@ -25,7 +25,6 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  max-width: 1232px;
   width: 100%;
   padding: 0;
   /* gap: 16px; */
