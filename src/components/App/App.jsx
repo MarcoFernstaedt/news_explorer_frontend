@@ -10,7 +10,7 @@ import "./App.css";
 import { Outlet } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { signUp, signIn, checkToken } from "../../utils/auth.jsx";
-import getArticles from "../../utils/api.jsx";
+import {getArticles, saveArticles} from "../../utils/api.jsx";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
@@ -48,13 +48,12 @@ const App = () => {
     setSavedArticles(articles);
   };
 
-  const handleSaveArticle = ({ _id, isSaved, article }) => {
-    if (isSaved) {
-      // Add article if not already saved
-      setSavedArticles(prev => [...prev, article]); 
-    } else {
-      // Remove article if isSaved is false
-      setSavedArticles(prev => prev.filter(a => a._id !== _id));
+  const handleSaveArticle = async ({ _id, isSaved, article }) => {
+    try {
+      const updatedArticles = await saveArticles({ _id, isSaved, article });
+      setSavedArticles(updatedArticles); // Update state with new saved articles
+    } catch (err) {
+      console.error("Error saving article:", err);
     }
   };
 
@@ -125,6 +124,10 @@ const App = () => {
     if (storedArticles) setSavedArticles(JSON.parse(storedArticles));
   }, []);
 
+  useEffect(() => {
+    console.log(savedArticles)
+  }, [savedArticles])
+
   return (
     <div className="app">
       <UserContext.Provider value={{ currentUser, isLoggedIn }}>
@@ -142,6 +145,7 @@ const App = () => {
                 handleCardRender,
                 isLoading,
                 hasSearched,
+                handleSaveArticle,
               }}
             />
             <Footer />
