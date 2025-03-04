@@ -20,8 +20,18 @@ const savedArticles = [
   },
 ].map((article) => ({ ...article, _id: crypto.randomUUID() }));
 
-export const getSavedArticles = async () => {
+// const saveArticles = async ({ _id, isSaved}) => {
+//   if (isSaved) {
+//     // Add article if not already saved
+//     return {...}
+//   } else {
+//     // Remove article if isSaved is false
+//     setSavedArticles(prev => prev.filter(a => a._id !== _id));
+//   }
+// }
+
+const getArticles = async () => {
   return savedArticles;
 };
 
-export default getSavedArticles;
+export default getArticles;
