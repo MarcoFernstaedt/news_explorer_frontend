@@ -10,13 +10,9 @@ import UserContext from "../../context/UserContext";
 
 const Main = () => {
   const { newsArticles } = useContext(NewsContext);
-  const {
-    visibleArticles,
-    isLoading,
-    hasSearched,
-    handleCardRender,
-  } = useOutletContext();
-  const { isLoggedIn } = useContext(UserContext)
+  const { visibleArticles, isLoading, hasSearched, handleCardRender } =
+    useOutletContext();
+  const { isLoggedIn } = useContext(UserContext);
 
   return (
     <main className="main">
@@ -40,13 +36,15 @@ const Main = () => {
               <NewsCard key={index} isLoggedIn={isLoggedIn} {...article} />
             ))}
           </ul>
-          <button
-            type="button"
-            onClick={handleCardRender}
-            className="main__button"
-          >
-            Show more
-          </button>
+          {visibleArticles < 100 && (
+            <button
+              type="button"
+              onClick={handleCardRender}
+              className="main__button"
+            >
+              Show more
+            </button>
+          )}
         </>
       ) : hasSearched ? (
         <Preloader />
