@@ -9,7 +9,7 @@ const ModalWithForm = ({
   secondaryBtnText,
   onClose,
   onSubmit,
-  // onSecondaryBtnSubmit,
+  onSecondaryBtnClick,
 }) => {
   useEscape(onClose);
   console.log(secondaryBtnText);
@@ -31,7 +31,7 @@ const ModalWithForm = ({
               </button>
               <button
                 type="button"
-                // onClick={onSecondaryBtnSubmit}
+                onClick={onSecondaryBtnClick}
                 className="modal__secondaryBtn"
               >
                 or

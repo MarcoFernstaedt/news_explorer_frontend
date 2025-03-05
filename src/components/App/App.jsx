@@ -13,7 +13,7 @@ import { signUp, signIn, checkToken } from "../../utils/auth.jsx";
 import {getArticles, saveArticles} from "../../utils/api.jsx";
 
 const App = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
   const [activeModal, setActiveModal] = useState("");
   const [newsArticles, setNewsArticles] = useState({});
@@ -164,7 +164,9 @@ const App = () => {
               title="Sign in"
               buttonText="Sign In"
               secondaryBtnText="Sign up"
+              onSecondaryBtnClick={handleOpenRegisterModal}
               onClose={handleCloseModal}
+              onSubmit={handleSignIn}
             />
           )}
           {activeModal === "register" && (
@@ -172,6 +174,7 @@ const App = () => {
               title="Sign in"
               buttonText="Sign up"
               secondaryBtnText="Login in"
+              onSubmit={handleSignUp}
               onClose={handleCloseModal}
             />
           )}

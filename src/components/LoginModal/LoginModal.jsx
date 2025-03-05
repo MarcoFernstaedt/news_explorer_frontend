@@ -6,17 +6,32 @@ const LoginModal = ({
   title,
   buttonText,
   secondaryBtnText,
+  onSecondaryBtnClick,
   onClose,
   onSubmit,
 }) => {
   const { values, handleChange } = useForm({});
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const {email, password} = values
+
+    if (!email || !password) {
+      return;
+    }
+
+    onSubmit({email, password})
+  };
+
   return (
     <ModalWithForm
       title={title}
       buttonText={buttonText}
       secondaryBtnText={secondaryBtnText}
+      onSecondaryBtnClick={onSecondaryBtnClick}
       onClose={onClose}
-      onSubmit={onSubmit}
+      onSubmit={handleSubmit}
     >
       <label htmlFor="email" className="modal__label">
         Email

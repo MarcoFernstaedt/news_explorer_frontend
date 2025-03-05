@@ -10,13 +10,26 @@ const RegisterModal = ({
   onSubmit,
 }) => {
   const { values, handleChange } = useForm({});
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const {name, email, password} = values
+
+    if (!name || !email || !password) {
+      return;
+    }
+
+    onSubmit({name, email, password})
+
+  }
   return (
     <ModalWithForm
       title={title}
       buttonText={buttonText}
       secondaryBtnText={secondaryBtnText}
       onClose={onClose}
-      onSubmit={onSubmit}
+      onSubmit={handleSubmit}
     >
       <label htmlFor="email" className="modal__label">
         Email
