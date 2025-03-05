@@ -1,12 +1,12 @@
-export const signUp = async (email, password) => {
+export const signUp = async ({ email, password, name }) => {
   localStorage.setItem(
     "user",
-    JSON.stringify({ email, token: "fake-jwt-token" })
+    JSON.stringify({ name, email, token: "fake-jwt-token" })
   );
   return { message: "User registered successfully!" };
 };
 
-export const signIn = async (email, password) => {
+export const signIn = async ({ email, password }) => {
   const user = JSON.parse(localStorage.getItem("user"));
   if (user && user.email === email) {
     return { token: "fake-jwt-token", message: "Login successful!" };
