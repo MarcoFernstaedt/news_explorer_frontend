@@ -10,7 +10,7 @@ import "./App.css";
 import { Outlet } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { signUp, signIn, checkToken } from "../../utils/auth.jsx";
-import {getArticles, saveArticles} from "../../utils/api.jsx";
+import { getArticles, saveArticles } from "../../utils/api.jsx";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -29,7 +29,7 @@ const App = () => {
   const handleSignIn = async (email, password) => {
     try {
       const response = await signIn(email, password);
-      localStorage.setItem("token", response.token);
+      localStorage.setItem("token", JSON.stringify(response.token));
       setIsLoggedIn(true);
     } catch (err) {
       console.error(err);
@@ -40,13 +40,14 @@ const App = () => {
     const token = localStorage.getItem("token");
     const response = await checkToken(token);
     setIsLoggedIn(response.loggedIn);
+    return response
   };
 
   const fetchArticles = async () => {
     const articles = await getArticles();
     localStorage.setItem("savedArticles", JSON.stringify(articles));
-    console.log('fetch')
-    console.log(articles)
+    console.log("fetch");
+    console.log(articles);
     setSavedArticles(articles);
   };
 
@@ -110,17 +111,24 @@ const App = () => {
   };
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (token) {
-      checkToken(token).then((reponse) => {
-        if (reponse.isLoggedIn) {
-          setIsLoggedIn(true);
-          const articles = fetchArticles();
-          console.log('articles')
-          console.log(articles)
+    const verifyUser = async () => {
+      const token = localStorage.getItem("token");
+      if (token) {
+        try {
+          const reponse = await handleCheckToken(token);
+          console.log("response logging in");
+          console.log(reponse.loggedIn);
+          if (reponse.loggedIn) {
+            const articles = await fetchArticles();
+            console.log("articles");
+            console.log(articles);
+          }
+        } catch (err) {
+          console.log(err);
         }
-      });
-    }
+      }
+    };
+    verifyUser();
   }, []);
 
   useEffect(() => {
@@ -129,9 +137,9 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('savedArticles', JSON.stringify(savedArticles))
-    console.log(savedArticles)
-  }, [savedArticles])
+    localStorage.setItem("savedArticles", JSON.stringify(savedArticles));
+    console.log(savedArticles);
+  }, [savedArticles]);
 
   return (
     <div className="app">
