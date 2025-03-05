@@ -114,19 +114,22 @@ const App = () => {
     if (token) {
       checkToken(token).then((reponse) => {
         if (reponse.isLoggedIn) {
-          setIsLoggedIn();
-          fetchArticles();
+          setIsLoggedIn(true);
+          const articles = fetchArticles();
+          console.log('articles')
+          console.log(articles)
         }
       });
     }
   }, []);
 
   useEffect(() => {
-    const storedArticles = localStorage.getItem("savedsArticles");
+    const storedArticles = localStorage.getItem("savedArticles");
     if (storedArticles) setSavedArticles(JSON.parse(storedArticles));
   }, []);
 
   useEffect(() => {
+    localStorage.setItem('savedArticles', JSON.stringify(savedArticles))
     console.log(savedArticles)
   }, [savedArticles])
 
