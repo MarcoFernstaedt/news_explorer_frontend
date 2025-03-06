@@ -15,13 +15,14 @@ const LoginModal = ({
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const {email, password} = values
+    const { email, password } = values;
 
     if (!email || !password) {
       return;
     }
 
-    onSubmit({email, password})
+    onSubmit({ email, password });
+    onClose();
   };
 
   return (

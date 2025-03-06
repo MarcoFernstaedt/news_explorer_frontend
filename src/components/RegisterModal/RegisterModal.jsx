@@ -14,15 +14,15 @@ const RegisterModal = ({
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const {name, email, password} = values
+    const { name, email, password } = values;
 
     if (!name || !email || !password) {
       return;
     }
 
-    onSubmit({name, email, password})
-
-  }
+    onSubmit({ name, email, password });
+    onClose();
+  };
   return (
     <ModalWithForm
       title={title}
