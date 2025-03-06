@@ -31,9 +31,9 @@ const App = () => {
       const response = await signIn();
       if (response.token) {
         localStorage.setItem("token", response.token);
-        const { name, email, _id } = await handleCheckToken();
-        setCurrentUser({ name, email, _id });
-        setIsLoggedIn(true);
+        handleCheckToken();
+        // setCurrentUser({ name, email, _id });
+        // setIsLoggedIn(true);
       }
     } catch (err) {
       console.error(err);
@@ -150,6 +150,7 @@ const App = () => {
               handleSearch={handleSearch}
               handleDrawerOpen={handleDrawerOpen}
               handleOnLoggout={handleLoggout}
+              savedArticles={savedArticles}
             />
             <Outlet
               context={{
