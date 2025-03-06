@@ -23,43 +23,59 @@ const App = () => {
   const [hasSearched, setHasSearched] = useState(false);
 
   const handleSignUp = async (email, password) => {
-    await signUp(email, password);
+    return await signUp();
   };
 
   const handleSignIn = async (email, password) => {
     try {
       const response = await signIn();
       if (response.token) {
-        handleCheckToken()
+        localStorage.setItem("token", response.token);
+        await handleCheckToken();
       }
-      // localStorage.setItem("token", JSON.stringify(response.token));
     } catch (err) {
       console.error(err);
     }
   };
 
+  const handleLoggout = () => {
+    localStorage.removeItem("token");
+    setIsLoggedIn(false);
+    setCurrentUser(null);
+    setSavedArticles(null);
+  };
+
   const handleCheckToken = async () => {
-    const response = await checkToken();
-    console.log('check token')
-    console.log(response.token, response.name)
-    if (response.token) {
-      setIsLoggedIn(true)
+    try {
+      const token = localStorage.getItem("token");
+      if (!token) return;
+
+      const response = await checkToken(token);
+      if (response.data) {
+        setIsLoggedIn(true);
+        const { name, email, _id } = response.data;
+        setCurrentUser({ name, email, _id });
+        fetchArticles();
+      }
+    } catch (err) {
+      console.error("Error checking token:", err);
     }
-    return response;
   };
 
   const fetchArticles = async () => {
     const articles = await getArticles();
-    localStorage.setItem("savedArticles", JSON.stringify(articles));
-    console.log("fetch");
+    // localStorage.setItem("savedArticles", articles);
+    console.log("fetching articles");
     console.log(articles);
+    console.log("fetched");
     setSavedArticles(articles);
   };
 
   const handleSaveArticle = async ({ _id, isSaved, article }) => {
     try {
-      const updatedArticles = await saveArticles({ _id, isSaved, article });
-      setSavedArticles(updatedArticles); // Update state with new saved articles
+      const updatedArticles = await saveArticles({ _id, isSaved, article, savedArticles });
+
+      setSavedArticles(updatedArticles);
     } catch (err) {
       console.error("Error saving article:", err);
     }
@@ -116,32 +132,11 @@ const App = () => {
   };
 
   useEffect(() => {
-    const verifyUser = async () => {
-      const response = handleCheckToken();
-      if (response.token) {
-        try {
-          console.log("response logging in");
-          setIsLoggedIn(true)
-          if (isLoggedIn) {
-            const articles = await fetchArticles();
-            console.log("articles");
-            console.log(articles);
-          }
-        } catch (err) {
-          console.log(err);
-        }
-      }
-    };
-    verifyUser();
+    handleCheckToken();
   }, []);
 
-  // useEffect(() => {
-  //   const storedArticles = localStorage.getItem("savedArticles");
-  //   if (storedArticles) setSavedArticles(JSON.parse(storedArticles));
-  // }, []);
-
   useEffect(() => {
-    localStorage.setItem("savedArticles", savedArticles);
+    console.log("save articles refresh");
     console.log(savedArticles);
   }, [savedArticles]);
 
@@ -155,6 +150,7 @@ const App = () => {
               handleOpenRegisterModal={handleOpenRegisterModal}
               handleSearch={handleSearch}
               handleDrawerOpen={handleDrawerOpen}
+              handleOnLoggout={handleLoggout}
             />
             <Outlet
               context={{
