@@ -11,10 +11,20 @@ const Header = ({
   handleSearch,
   handleDrawerOpen,
   handleOnLoggout,
+  savedArticles,
 }) => {
-  const { isLoggedIn } = useContext(UserContext);
+  const { currentUser } = useContext(UserContext);
   const location = useLocation();
   const isHome = location.pathname === "/";
+  const articles = Object.values(savedArticles);
+
+  const uniqueKeywords = [
+    ...new Set(articles.map((article) => article.keyword)),
+  ];
+
+  const displayKeywords = uniqueKeywords.slice(0, 2);
+
+  const remainingCount = uniqueKeywords.length - displayKeywords.length;
 
   return (
     <div className={isHome ? "header header_home" : "header_saved-news"}>
@@ -33,7 +43,9 @@ const Header = ({
               : "header__title header__title_saved-news"
           }
         >
-          {isHome ? "What's going on in" : "Marco, you have 5 Saved"}
+          {isHome
+            ? "What's going on in"
+            : `${currentUser.name}, you have ${articles.length} Saved`}
           <span className="header__title-second-line">
             {isHome ? "the world?" : "articles"}
           </span>
@@ -54,7 +66,12 @@ const Header = ({
               </span>
             </>
           ) : (
-            "By keywords: "
+            `By keywords: ${displayKeywords.join(", ")} 
+            ${
+              remainingCount > 0
+                ? `and ${remainingCount} other${remainingCount > 1 ? "s" : ""}`
+                : ""
+            }`
           )}
         </p>
       </div>
