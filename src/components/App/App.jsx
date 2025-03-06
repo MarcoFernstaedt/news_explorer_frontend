@@ -31,7 +31,9 @@ const App = () => {
       const response = await signIn();
       if (response.token) {
         localStorage.setItem("token", response.token);
-        await handleCheckToken();
+        const { name, email, _id } = await handleCheckToken();
+        setCurrentUser({ name, email, _id });
+        setIsLoggedIn(true);
       }
     } catch (err) {
       console.error(err);
@@ -65,15 +67,17 @@ const App = () => {
   const fetchArticles = async () => {
     const articles = await getArticles();
     // localStorage.setItem("savedArticles", articles);
-    console.log("fetching articles");
-    console.log(articles);
-    console.log("fetched");
     setSavedArticles(articles);
   };
 
   const handleSaveArticle = async ({ _id, isSaved, article }) => {
     try {
-      const updatedArticles = await saveArticles({ _id, isSaved, article, savedArticles });
+      const updatedArticles = await saveArticles({
+        _id,
+        isSaved,
+        article,
+        savedArticles,
+      });
 
       setSavedArticles(updatedArticles);
     } catch (err) {
@@ -135,11 +139,6 @@ const App = () => {
     handleCheckToken();
   }, []);
 
-  useEffect(() => {
-    console.log("save articles refresh");
-    console.log(savedArticles);
-  }, [savedArticles]);
-
   return (
     <div className="app">
       <UserContext.Provider value={{ currentUser, isLoggedIn }}>
@@ -155,6 +154,7 @@ const App = () => {
             <Outlet
               context={{
                 visibleArticles,
+                savedArticles,
                 handleCardRender,
                 isLoading,
                 hasSearched,
