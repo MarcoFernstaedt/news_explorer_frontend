@@ -33,14 +33,12 @@ const articles = [
 const getArticles = async () => {
   return new Promise((resolve) => {
     setTimeout(() => {
-      resolve(articles)
-    }, 500)
-  })
+      resolve(articles);
+    }, 500);
+  });
 };
 
-let savedArticles = []; // Simulated backend storage
-
-const saveArticles = async ({ _id, isSaved, article }) => {
+const saveArticles = async ({ _id, isSaved, article, savedArticles }) => {
   return new Promise((resolve) => {
     setTimeout(() => {
       if (isSaved) {
