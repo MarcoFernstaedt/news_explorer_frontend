@@ -6,7 +6,6 @@
   width: 100%;
   padding: 0;
   background-color: #fff;
-  /* background-color: black; */
 }
 
 .card__image {
@@ -16,7 +15,6 @@
 
 .card__content {
   padding: 20px;
-  /* background-color: black; */
 }
 
 .card__tag {
@@ -164,7 +162,7 @@
 
 @media screen and (max-width: 320px) {
   .card {
-    max-width:  288px;
+    max-width: 288px;
     width: 100%;
     margin-bottom: 10px;
   }
