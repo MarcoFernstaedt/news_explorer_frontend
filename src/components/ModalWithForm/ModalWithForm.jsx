@@ -1,5 +1,5 @@
 import React from "react";
-import { useEscape } from "../../hooks/useEscape";
+import {useEscape} from "../../hooks/useEscape";
 import "./ModalWithForm.css";
 
 const ModalWithForm = ({
@@ -12,7 +12,6 @@ const ModalWithForm = ({
   onSecondaryBtnClick,
 }) => {
   useEscape(onClose);
-  console.log(secondaryBtnText);
   return (
     <div className="modal">
       <div className="modal__container">
