@@ -3,7 +3,7 @@ import "./Navigation.css";
 import { useContext } from "react";
 import UserContext from "../../context/UserContext";
 
-const Navigation = ({ handleOpenLoginModal, handleDrawerOpen }) => {
+const Navigation = ({ handleOpenLoginModal, handleDrawerOpen, handleOnLoggout }) => {
   const { isLoggedIn} = useContext(UserContext)
   const location = useLocation();
   
@@ -26,7 +26,7 @@ const Navigation = ({ handleOpenLoginModal, handleDrawerOpen }) => {
           </Link>
         )}
         {isLoggedIn ? (
-          <button className="nav__link-pill-btn">Elise</button>
+          <button type='button' onClick={handleOnLoggout} className="nav__link-pill-btn">Elise</button>
         ) : (
           <button
             type="button"

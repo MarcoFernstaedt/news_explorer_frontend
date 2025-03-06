@@ -10,6 +10,7 @@ const Header = ({
   handleOpenRegisterModal,
   handleSearch,
   handleDrawerOpen,
+  handleOnLoggout,
 }) => {
   const { isLoggedIn } = useContext(UserContext);
   const location = useLocation();
@@ -21,6 +22,7 @@ const Header = ({
         handleOpenLoginModal={handleOpenLoginModal}
         handleOpenRegisterModal={handleOpenRegisterModal}
         handleDrawerOpen={handleDrawerOpen}
+        handleOnLoggout={handleOnLoggout}
       />
       <div className={isHome ? "header__hero" : "header__hero_saved-news"}>
         {/* <p className="header__heading">Saved articles</p> */}
