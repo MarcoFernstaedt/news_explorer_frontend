@@ -40,7 +40,7 @@ const App = () => {
     const token = localStorage.getItem("token");
     const response = await checkToken(token);
     setIsLoggedIn(response.loggedIn);
-    return response
+    return response;
   };
 
   const fetchArticles = async () => {
@@ -185,6 +185,7 @@ const App = () => {
               title="Sign in"
               buttonText="Sign up"
               secondaryBtnText="Login in"
+              onSecondaryBtnClick={handleOpenLoginModal}
               onSubmit={handleSignUp}
               onClose={handleCloseModal}
             />
