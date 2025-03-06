@@ -28,18 +28,23 @@ const App = () => {
 
   const handleSignIn = async (email, password) => {
     try {
-      const response = await signIn(email, password);
-      localStorage.setItem("token", JSON.stringify(response.token));
-      setIsLoggedIn(true);
+      const response = await signIn();
+      if (response.token) {
+        handleCheckToken()
+      }
+      // localStorage.setItem("token", JSON.stringify(response.token));
     } catch (err) {
       console.error(err);
     }
   };
 
   const handleCheckToken = async () => {
-    const token = localStorage.getItem("token");
-    const response = await checkToken(token);
-    setIsLoggedIn(response.loggedIn);
+    const response = await checkToken();
+    console.log('check token')
+    console.log(response.token, response.name)
+    if (response.token) {
+      setIsLoggedIn(true)
+    }
     return response;
   };
 
@@ -112,13 +117,12 @@ const App = () => {
 
   useEffect(() => {
     const verifyUser = async () => {
-      const token = localStorage.getItem("token");
-      if (token) {
+      const response = handleCheckToken();
+      if (response.token) {
         try {
-          const reponse = await handleCheckToken(token);
           console.log("response logging in");
-          console.log(reponse.loggedIn);
-          if (reponse.loggedIn) {
+          setIsLoggedIn(true)
+          if (isLoggedIn) {
             const articles = await fetchArticles();
             console.log("articles");
             console.log(articles);
@@ -131,13 +135,13 @@ const App = () => {
     verifyUser();
   }, []);
 
-  useEffect(() => {
-    const storedArticles = localStorage.getItem("savedArticles");
-    if (storedArticles) setSavedArticles(JSON.parse(storedArticles));
-  }, []);
+  // useEffect(() => {
+  //   const storedArticles = localStorage.getItem("savedArticles");
+  //   if (storedArticles) setSavedArticles(JSON.parse(storedArticles));
+  // }, []);
 
   useEffect(() => {
-    localStorage.setItem("savedArticles", JSON.stringify(savedArticles));
+    localStorage.setItem("savedArticles", savedArticles);
     console.log(savedArticles);
   }, [savedArticles]);
 
