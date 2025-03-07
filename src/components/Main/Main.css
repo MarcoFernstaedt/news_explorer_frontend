@@ -1,9 +1,8 @@
 .main {
   display: flex;
   flex-direction: column;
-  /* height: 975px; */
   background-color: #f5f6f7;
-  padding: 40px 40px 0px;
+  padding: 40px 40px;
 }
 
 .main__header {
@@ -22,6 +21,16 @@
 }
 
 .main__card-wrap {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); 
+  gap: 16px;
+  justify-content: start; 
+  width: 100%;
+  padding: 0;
+  margin: 32px 0px 64px;
+}
+
+/* .main__card-wrap {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -29,7 +38,7 @@
   padding: 0;
   gap: 16px;
   margin: 32px 0px 64px;
-}
+} */
 
 .main__card-wrap_hidden {
   display: none;
