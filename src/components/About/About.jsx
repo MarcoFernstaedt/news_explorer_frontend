@@ -10,9 +10,11 @@ const About = () => {
         <h4 className="about__header">About the author</h4>
         <p className="about__paragraph">
           This block describes the project author. Here you should indicate your
-          name, what you do, and which development technologies you know. You
-          can also talk about your experience with TripleTen, what you learned
-          there, and how you can help potential customers.
+          name, what you do, and which development technologies you know.
+          <span className="about__paragraph-seperater">
+            You can also talk about your experience with TripleTen, what you
+            learned there, and how you can help potential customers.
+          </span>
         </p>
       </div>
     </div>
