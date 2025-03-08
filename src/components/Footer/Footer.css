@@ -3,7 +3,8 @@
   justify-content: space-between;
   align-items: center;
   height: 90px;
-  padding: 28px 104px 26px;
+  /* height: 100%; */
+  padding: 26px 104px 25px;
   background-color: #fff;
 }
 
@@ -55,7 +56,15 @@
   list-style: none;
 }
 
-@media (mad-width: 360px) {
+@media screen and (max-width: 760px) {
+  .footer {
+    height: 64px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media (mad-width: 320px) {
   .footer {
     height: 64px;
     padding: auto 24px;
