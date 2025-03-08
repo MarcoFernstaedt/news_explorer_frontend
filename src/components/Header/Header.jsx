@@ -66,12 +66,14 @@ const Header = ({
               </span>
             </>
           ) : (
-            `By keywords: ${displayKeywords.join(", ")} 
+            <div className="header__keywords">
+              `By keywords: ${displayKeywords.join(", ")} 
             ${
               remainingCount > 0
                 ? `and ${remainingCount} other${remainingCount > 1 ? "s" : ""}`
                 : ""
             }`
+            </div>
           )}
         </p>
       </div>

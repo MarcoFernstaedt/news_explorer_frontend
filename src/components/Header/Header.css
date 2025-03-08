@@ -73,6 +73,10 @@
   height: 24px;
 }
 
+.header__keywords {
+  background-color: red;
+}
+
 @media (max-width: 760px) {
   .header {
     padding-bottom: 48px;
