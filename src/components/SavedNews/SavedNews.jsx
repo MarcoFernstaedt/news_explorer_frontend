@@ -1,6 +1,5 @@
 import React from "react";
 import NewsCard from "../NewsCard/NewsCard";
-import {{NewsContext}} from "../../context/NewsContext";
 import { useContext } from "react";
 import cardImage from "../../assets/card-image.jpeg";
 import "./SavedNews.css";
@@ -8,8 +7,6 @@ import { useOutletContext } from "react-router-dom";
 
 const SavedNews = () => {
   const { savedArticles } = useOutletContext();
-
-  // const newsArticles = [
   //   {
   //     title: "Breaking News: Tech Innovation in 2024",
   //     urlToImage: cardImage, // Using the variable
