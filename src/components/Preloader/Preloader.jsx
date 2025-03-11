@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import "./preloader.css";
+import "./Preloader.css";
 import UserContext from "../../context/UserContext";
 
 const Preloader = () => {
@@ -14,7 +14,9 @@ const Preloader = () => {
             : "circle-preloader circle-preloader_stop-animation"
         }
       ></div>
-      {!isLoading && <div className="preloader__alert-message">Nothing Found</div>}
+      {!isLoading && (
+        <div className="preloader__alert-message">Nothing Found</div>
+      )}
       <h2
         className={
           isLoading
