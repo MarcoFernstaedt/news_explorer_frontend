@@ -96,8 +96,8 @@ const App = () => {
     setIsLoading(true);
 
     try {
-      const articleData = await getNews(keyword);
-
+      const articleData = await getNews(keyword);''
+      
       const articleObj = articleData.map((article) => ({
         _id: crypto.randomUUID(),
         isSaved: false,
