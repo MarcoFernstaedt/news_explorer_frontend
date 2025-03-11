@@ -1,5 +1,5 @@
 import Header from "../Header/Header";
-import NewsContext from "../../context/NewsContext.jsx";
+import { NewsContext } from "../../context/NewsContext.jsx";
 import UserContext from "../../context/UserContext.jsx";
 import Footer from "../Footer/Footer";
 import Drawer from "../Drawer/Drawer.jsx";
@@ -96,8 +96,9 @@ const App = () => {
     setIsLoading(true);
 
     try {
-      const articleData = await getNews(keyword);''
-      
+      const articleData = await getNews(keyword);
+      ("");
+
       const articleObj = articleData.map((article) => ({
         _id: crypto.randomUUID(),
         isSaved: false,
