@@ -1,6 +1,6 @@
 import React from "react";
 import NewsCard from "../NewsCard/NewsCard";
-import NewsContext from "../../context/NewsContext";
+import {{NewsContext}} from "../../context/NewsContext";
 import { useContext } from "react";
 import cardImage from "../../assets/card-image.jpeg";
 import "./SavedNews.css";
