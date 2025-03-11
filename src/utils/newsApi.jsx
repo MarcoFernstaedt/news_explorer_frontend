@@ -1,4 +1,4 @@
-import apiKey from "../utils/constants";
+const apiKey = import.meta.env.VITE_NEWS_EXPLORER_API_KEY;
 
 const baseUrl =
   process.env.NODE_ENV === "production"
