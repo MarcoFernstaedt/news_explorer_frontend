@@ -1,1 +1,1 @@
-News Explorer
+News Explorer Frontend
