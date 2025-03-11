@@ -1,10 +1,8 @@
 import React from "react";
-import NewsContext from "../../context/NewsContext.jsx";
 import useForm from "../../hooks/useForm";
-import { useContext } from "react";
 import "./SearchForm.css";
 
-const SearchForm = ({handleSearch}) => {
+const SearchForm = ({ handleSearch }) => {
   const { values, handleChange } = useForm({});
 
   const handleSearchSubmit = (e) => {
