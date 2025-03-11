@@ -1,5 +1,5 @@
 import Header from "../Header/Header";
-import { NewsContext } from "../../context/NewsContext.jsx";
+// import { NewsContext } from "../../context/NewsContext.jsx";
 import UserContext from "../../context/UserContext.jsx";
 import Footer from "../Footer/Footer";
 import Drawer from "../Drawer/Drawer.jsx";
@@ -143,56 +143,55 @@ const App = () => {
   return (
     <div className="app">
       <UserContext.Provider value={{ currentUser, isLoggedIn }}>
-        <NewsContext.Provider value={{ newsArticles, handleSearch }}>
-          <div className="page">
-            <Header
-              handleOpenLoginModal={handleOpenLoginModal}
-              handleOpenRegisterModal={handleOpenRegisterModal}
-              handleSearch={handleSearch}
-              handleDrawerOpen={handleDrawerOpen}
-              handleOnLoggout={handleLoggout}
-              savedArticles={savedArticles}
-            />
-            <Outlet
-              context={{
-                visibleArticles,
-                savedArticles,
-                handleCardRender,
-                isLoading,
-                hasSearched,
-                handleSaveArticle,
-              }}
-            />
-            <Footer />
-          </div>
-          {activeModal === "drawer" && (
-            <Drawer
-              handleCloseModal={handleCloseModal}
-              handleOpenLoginModal={handleOpenLoginModal}
-              isLoggedIn={isLoggedIn}
-            />
-          )}
-          {activeModal === "login" && (
-            <LoginModal
-              title="Sign in"
-              buttonText="Sign In"
-              secondaryBtnText="Sign up"
-              onSecondaryBtnClick={handleOpenRegisterModal}
-              onClose={handleCloseModal}
-              onSubmit={handleSignIn}
-            />
-          )}
-          {activeModal === "register" && (
-            <RegisterModal
-              title="Sign in"
-              buttonText="Sign up"
-              secondaryBtnText="Login in"
-              onSecondaryBtnClick={handleOpenLoginModal}
-              onSubmit={handleSignUp}
-              onClose={handleCloseModal}
-            />
-          )}
-        </NewsContext.Provider>
+        <div className="page">
+          <Header
+            handleOpenLoginModal={handleOpenLoginModal}
+            handleOpenRegisterModal={handleOpenRegisterModal}
+            handleSearch={handleSearch}
+            handleDrawerOpen={handleDrawerOpen}
+            handleOnLoggout={handleLoggout}
+            savedArticles={savedArticles}
+          />
+          <Outlet
+            context={{
+              visibleArticles,
+              newsArticles,
+              savedArticles,
+              handleCardRender,
+              isLoading,
+              hasSearched,
+              handleSaveArticle,
+            }}
+          />
+          <Footer />
+        </div>
+        {activeModal === "drawer" && (
+          <Drawer
+            handleCloseModal={handleCloseModal}
+            handleOpenLoginModal={handleOpenLoginModal}
+            isLoggedIn={isLoggedIn}
+          />
+        )}
+        {activeModal === "login" && (
+          <LoginModal
+            title="Sign in"
+            buttonText="Sign In"
+            secondaryBtnText="Sign up"
+            onSecondaryBtnClick={handleOpenRegisterModal}
+            onClose={handleCloseModal}
+            onSubmit={handleSignIn}
+          />
+        )}
+        {activeModal === "register" && (
+          <RegisterModal
+            title="Sign in"
+            buttonText="Sign up"
+            secondaryBtnText="Login in"
+            onSecondaryBtnClick={handleOpenLoginModal}
+            onSubmit={handleSignUp}
+            onClose={handleCloseModal}
+          />
+        )}
       </UserContext.Provider>
     </div>
   );
