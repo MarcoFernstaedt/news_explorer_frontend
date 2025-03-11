@@ -1,6 +1,6 @@
 import React from "react";
 import NewsCard from "../NewsCard/NewsCard";
-import NewsContext from "../../context/NewsContext";
+// import NewsContext from "../../context/NewsContext";
 import { useContext } from "react";
 import About from "../About/About";
 import Preloader from "../Preloader/Preloader";
@@ -9,8 +9,8 @@ import { useOutletContext } from "react-router-dom";
 import UserContext from "../../context/UserContext";
 
 const Main = () => {
-  const { newsArticles } = useContext(NewsContext);
-  const { visibleArticles, isLoading, hasSearched, handleCardRender } =
+  // const { newsArticles } = useContext(NewsContext);
+  const {newsArticles, visibleArticles, isLoading, hasSearched, handleCardRender } =
     useOutletContext();
   const { isLoggedIn } = useContext(UserContext);
 
