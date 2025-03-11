@@ -71,11 +71,11 @@
 @media screen and (max-width: 320px) {
   .footer {
     display: grid;
+    grid-template-columns: 200px 72px;
     grid-template-areas:
       "footer__links footer__social-icons"
       "footer__copy footer__copy";
-    background-color: red;
-    color: white;
+    color: #1A1B22;
     height: 176px;
     max-width: 320px;
     width: 100%;
@@ -83,28 +83,18 @@
   }
 
   .footer__links {
-    background-color: black;
     margin: 0px;
     padding: 0;
     display: flex;
     flex-direction: column;
     align-items: start;
-    max-width: 200px;
-    width: 100%;
     height: 74px;
   }
 
   .footer__social-icons {
     display: flex;
-    background-color: blue;
     padding: 0;
-    max-width: 120px;
-    width: 100%;
     height: 74px;
-  }
-
-  .footer__social-icon {
-    padding: 0;
   }
 
   .footer__copy {
