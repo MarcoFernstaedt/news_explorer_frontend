@@ -1,4 +1,4 @@
-import githubIcon from "../../assets/gitHub.svg";
+import githubIcon from "../../assets/github.svg";
 import facebookIcon from "../../assets/facebook.svg";
 import "./Footer.css";
 
