@@ -12,11 +12,11 @@ This project is currently **frontend-only**, but a backend with **JWT authentica
 
 ## **Features**
 
-✅ **Search News** – Find articles by keyword  
-✅ **User Authentication (Dummy Data)** – Sign in & register (backend coming soon)  
-✅ **Save & Remove Articles** – Bookmark articles to access later  
-✅ **Responsive Design** – Fully optimized for all screen sizes  
-✅ **Built with React & CSS**
+**Search News** – Find articles by keyword  
+**User Authentication (Dummy Data)** – Sign in & register (backend coming soon)  
+**Save & Remove Articles** – Bookmark articles to access later  
+**Responsive Design** – Fully optimized for all screen sizes  
+**Built with React & CSS**
 
 ---
 
