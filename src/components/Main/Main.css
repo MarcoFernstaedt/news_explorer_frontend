@@ -22,9 +22,9 @@
 
 .main__card-wrap {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); 
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 16px;
-  justify-content: start; 
+  justify-content: start;
   width: 100%;
   padding: 0;
   margin: 32px 0px 64px;
@@ -70,10 +70,13 @@
 @media (max-width: 760px) {
   .main__card-wrap {
     max-width: 688px;
-    grid-template-columns: repeat(auto-fit, minmax(224px, 1fr)); 
+    display: flex;
+    flex-direction: row;
+    /* grid-template-columns: repeat(auto-fit, minmax(224px, 1fr)); */
     width: 100%;
-    gap: 0px;
-    border-bottom: 32px;
+    /* gap: 8px; */
+    margin-bottom: 32px;
+    margin: 32px 0px;
   }
 
   .main__button {
