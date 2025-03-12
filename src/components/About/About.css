@@ -1,11 +1,12 @@
 .about {
   display: flex;
   justify-content: space-between;
+  /* align-items: center; */
   width: 100%;
-  height: 624px;
+  /* height: 624px; */
   background-color: #fff;
-  padding-top: 80px;
-  color: #1A1B22;
+  padding: 80px 64px;
+  color: #1a1b22;
 }
 
 .about__author-image {
@@ -19,7 +20,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  /* margin-left: 56px; */
+  margin-top: 51px;
 }
 
 .about__header {
@@ -73,7 +74,7 @@
     justify-content: center;
     align-items: cente;
     padding: 32px 24px 128px;
-  } 
+  }
 
   .about__author-image {
     margin-bottom: 24px;
