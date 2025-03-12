@@ -73,10 +73,6 @@
     font-size: 30px;
     margin-bottom: 16px;
   }
-
-  /* .about__paragraph {
-    margin-bottom: 96px;
-  } */
 }
 
 @media screen and (max-width: 320px) {
@@ -90,5 +86,14 @@
 
   .about__author-image {
     margin-bottom: 24px;
-  }}
+  }
+
+  .about__content {
+    width: 272px;
+  }
+
+  .about__header {
+    /* width: 288px; */
+    height: 40px;
+  }
 }
