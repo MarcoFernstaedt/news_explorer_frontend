@@ -41,10 +41,11 @@ const App = () => {
   };
 
   const handleLoggout = () => {
+    console.log("crash?");
     localStorage.removeItem("token");
     setIsLoggedIn(false);
-    setCurrentUser(null);
-    setSavedArticles(null);
+    setCurrentUser({});
+    setSavedArticles({});
   };
 
   const handleCheckToken = async () => {
