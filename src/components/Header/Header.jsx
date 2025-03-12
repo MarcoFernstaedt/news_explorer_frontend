@@ -27,7 +27,7 @@ const Header = ({
   const remainingCount = uniqueKeywords.length - displayKeywords.length;
 
   return (
-    <div className={isHome ? "header header_home" : "header_saved-news"}>
+    <header className={isHome ? "header header_home" : "header_saved-news"}>
       <Navigation
         handleOpenLoginModal={handleOpenLoginModal}
         handleOpenRegisterModal={handleOpenRegisterModal}
@@ -67,18 +67,17 @@ const Header = ({
             </>
           ) : (
             <div className="header__keywords">
-              `By keywords: ${displayKeywords.join(", ")} 
-            ${
-              remainingCount > 0
+              `By keywords: ${displayKeywords.join(", ")}$
+              {remainingCount > 0
                 ? `and ${remainingCount} other${remainingCount > 1 ? "s" : ""}`
-                : ""
-            }`
+                : ""}
+              `
             </div>
           )}
         </p>
       </div>
       {isHome && <SearchForm handleSearch={handleSearch} />}
-    </div>
+    </header>
   );
 };
 
