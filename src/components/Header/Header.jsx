@@ -21,26 +21,27 @@ const Header = ({
   const uniqueKeywords = [
     ...new Set(articles.map((article) => article.keyword)),
   ];
-
   const displayKeywords = uniqueKeywords.slice(0, 2);
-
   const remainingCount = uniqueKeywords.length - displayKeywords.length;
 
   return (
-    <header className={isHome ? "header header_home" : "header_saved-news"}>
+    <header
+      className={
+        isHome ? "header header_type_home" : "header header_type_saved-news"
+      }
+    >
       <Navigation
         handleOpenLoginModal={handleOpenLoginModal}
         handleOpenRegisterModal={handleOpenRegisterModal}
         handleDrawerOpen={handleDrawerOpen}
         handleOnLoggout={handleOnLoggout}
       />
-      <div className={isHome ? "header__hero" : "header__hero_saved-news"}>
-        {/* <p className="header__heading">Saved articles</p> */}
+      <div className={isHome ? "header__hero" : "header__hero_type_saved-news"}>
         <h1
           className={
             isHome
-              ? "header__title header__title_home"
-              : "header__title header__title_saved-news"
+              ? "header__title header__title_type_home"
+              : "header__title header__title_type_saved-news"
           }
         >
           {isHome
@@ -53,16 +54,18 @@ const Header = ({
         <p
           className={
             isHome
-              ? "header__sub-title header__sub-title_home"
-              : "header__sub-title_saved-news"
+              ? "header__sub-title header__sub-title_type_home"
+              : "header__sub-title header__sub-title_type_saved-news"
           }
         >
           {isHome ? (
             <>
               Find the latest news on any topic and save them in your{" "}
-              <span className="header__sub-title_tablet">
+              <span className="header__sub-title_device_tablet">
                 personal
-                <span className="header__sub-title_mobile">account.</span>
+                <span className="header__sub-title_device_mobile">
+                  account.
+                </span>
               </span>
             </>
           ) : (
