@@ -65,6 +65,14 @@
     padding-left: 40px;
     padding-right: 40px;
   }
+
+  .footer__copy {
+    width: 300px;
+  }
+
+  .footer__links {
+    margin-right: 40px;
+  }
 }
 
 @media screen and (max-width: 320px) {
