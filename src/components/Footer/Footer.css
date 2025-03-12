@@ -97,6 +97,7 @@
   }
 
   .footer__copy {
+    width: 288px;
     margin-top: 36px;
   }
 }
