@@ -86,7 +86,6 @@
 }
 
 .modal__input:focus {
-  border-bottom: solid 1px #000;
   outline: none;
 }
 
