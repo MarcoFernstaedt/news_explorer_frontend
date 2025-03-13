@@ -21,24 +21,17 @@
 }
 
 .main__card-wrap {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 16px;
-  justify-content: start;
-  width: 100%;
-  padding: 0;
-  margin: 32px 0px 64px;
-}
-
-/* .main__card-wrap {
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
-  justify-content: center;
-  width: 100%;
+  /* gap: 16px; */
+  width: calc(
+    3 * 400px + 2 * 16px
+  ); /* Adjust width based on three cards and gaps */
+  max-width: 100%;
   padding: 0;
-  gap: 16px;
-  margin: 32px 0px 64px;
-} */
+  margin: 32px auto 64px; /* Centering the container */
+}
 
 .main__card-wrap_hidden {
   display: none;
