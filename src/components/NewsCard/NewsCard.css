@@ -176,6 +176,10 @@
     margin-bottom: 10px;
   }
 
+  .card:last-child {
+    margin-bottom: 0px;
+  }
+
   .card__image {
     height: 186px;
   }
