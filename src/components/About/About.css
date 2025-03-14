@@ -70,6 +70,24 @@
   }
 
   .about__header {
+    margin-bottom: 16px;
     font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .about {
+    flex-direction: column;
+    padding: 32px 16px 128px;
+  }
+
+  .about__author-image {
+    max-width: 272px;
+    height: 272px;
+    margin: 0 auto 24px;
+  }
+
+  .about__paragraph {
+    height: 240px;
   }
 }
