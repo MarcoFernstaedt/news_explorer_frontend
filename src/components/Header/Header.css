@@ -73,11 +73,11 @@
   height: 24px;
 }
 
-.header__keywords {
+/* .header__keywords {
   background-color: red;
-}
+} */
 
-@media (max-width: 760px) {
+@media (max-width: 768px) {
   .header {
     padding-bottom: 48px;
   }
@@ -118,6 +118,11 @@
 
 @media screen and (max-width: 320px) {
   .header__hero {
+    padding-left: 16px;
+    margin: 30px 0 122px;
+  }
+
+  .header__hero_type_saved-news {
     padding-left: 16px;
     margin: 30px 0 122px;
   }
