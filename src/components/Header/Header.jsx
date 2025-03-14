@@ -21,7 +21,7 @@ const Header = ({
   const uniqueKeywords = [
     ...new Set(articles.map((article) => article.keyword)),
   ];
-  const displayKeywords = uniqueKeywords.slice(0, 2);
+  const displayKeywords = uniqueKeywords.slice(0, 3);
   const remainingCount = uniqueKeywords.length - displayKeywords.length;
 
   return (
@@ -46,9 +46,9 @@ const Header = ({
         >
           {isHome
             ? "What's going on in"
-            : `${currentUser.name}, you have ${articles.length} Saved`}
+            : `${currentUser.name}, you have ${articles.length} Saved articles`}
           <span className="header__title-second-line">
-            {isHome ? "the world?" : "articles"}
+            {isHome ? "the world?" : ""}
           </span>
         </h1>
         <p
@@ -61,18 +61,18 @@ const Header = ({
           {isHome ? (
             <>
               Find the latest news on any topic and save them in your{" "}
-              <span className="header__sub-title_device_tablet">
+              <span className="header__sub-title header__sub-title_device_tablet">
                 personal
-                <span className="header__sub-title_device_mobile">
+                <span className="header__sub-title header__sub-title_device_mobile">
                   account.
                 </span>
               </span>
             </>
           ) : (
             <div className="header__keywords">
-              `By keywords: ${displayKeywords.join(", ")}$
+              `By keywords: {displayKeywords.join(", ")}
               {remainingCount > 0
-                ? `and ${remainingCount} other${remainingCount > 1 ? "s" : ""}`
+                ? ` and ${remainingCount} other${remainingCount > 1 ? "s" : ""}`
                 : ""}
               `
             </div>
