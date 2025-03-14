@@ -57,7 +57,7 @@
 
 .nav__link_saved-news {
   width: 178px;
-  border-color: #1A1B22;
+  border-color: #1a1b22;
 }
 
 .nav__link-pill-btn {
@@ -78,7 +78,7 @@
   background-position: center;
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .nav {
     height: 66px;
     padding: 0px 40px;
@@ -89,7 +89,7 @@
   }
 }
 
-@media (max-width: 320px) {
+@media screen and (max-width: 320px) {
   .nav {
     height: 56px;
     padding: 0 16px;
