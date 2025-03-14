@@ -18,14 +18,14 @@
 .about__content {
   display: flex;
   flex-direction: column;
-  /* justify-content: space-evenly; */
   max-width: 600px;
   margin-top: 51px;
+  color: #1a1b22;
 }
 
 .about__header {
-  width: 100%;
-  height: 46px;
+  /* width: 100%;
+  height: 46px; */
   font-family: "Roboto Slab";
   font-weight: 400;
   font-size: 40px;
@@ -43,9 +43,33 @@
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;
-  /* margin-bottom: 303px; */
 }
 
 .about__paragraph-seperater {
   display: block;
+}
+
+@media screen and (max-width: 768px) {
+  .about {
+    padding: 40px 40px 61px;
+  }
+
+  .about__author-image {
+    max-width: 232px;
+    height: 232px;
+    margin-top: 21px;
+  }
+
+  .about__content {
+    max-width: 424px;
+    margin-top: 0px;
+  }
+
+  .about__paragraph {
+    height: 168px;
+  }
+
+  .about__header {
+    font-size: 30px;
+  }
 }
