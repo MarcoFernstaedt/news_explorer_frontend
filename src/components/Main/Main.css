@@ -65,6 +65,8 @@
   .main__header {
     margin-top: 40px;
     padding-left: 40px;
+    font-size: 30px;
+    line-height: 34px;
   }
 
   .main__card-wrap {
@@ -77,23 +79,28 @@
   }
 
   .main__button {
-    max-width: 240px;
-    width: 100%;
+    width: 240px;
     height: 56px;
     margin-bottom: 40px;
   }
 }
 
 @media screen and (max-width: 320px) {
-  .main {
-    padding: 32px 16px 40px;
+  .main__header {
+    margin-top: 32px;
+    padding-left: 16px;
   }
+
   .main__card-wrap {
-    display: flex;
-    flex-direction: column;
-    /* flex-direction: row;
-    justify-content: center; */
     margin-top: 58px;
-    margin-bottom: 11px;
+    margin-bottom: 16px;
+  }
+
+  .main__button {
+    width: 288px;
+    height: 56px;
+    margin-bottom: 24px;
+    font-size: 18px;
+    line-height: 24px;
   }
 }
