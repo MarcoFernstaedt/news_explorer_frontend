@@ -92,8 +92,8 @@ main {
 
   .main__card-wrap {
     flex-direction: column;
-    margin-top: 58px;
-    margin-bottom: 16px;
+    padding: 0 16px;
+    margin: 58px auto 16px;
   }
 
   .main__button {
