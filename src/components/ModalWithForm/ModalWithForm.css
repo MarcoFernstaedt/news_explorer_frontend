@@ -24,8 +24,8 @@
 
 .modal__close {
   position: absolute;
-  top: -45px;
-  right: -45px;
+  bottom: calc(100% + 8px);
+  left: calc(100% + 8px);
   width: 40px;
   height: 40px;
   background-color: transparent;
@@ -135,9 +135,20 @@
   margin-left: 3px;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 768px) {
   .modal__close {
-    top: -16px;
-    right: -16px;
+    bottom: calc(100% + 6px);
+    left: calc(100% + 6px);
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .modal__close {
+    bottom: calc(100% + 16px);
+    left: calc(100% + -32px);
+    width: 24px;
+    height: 24px;
   }
 }
