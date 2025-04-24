@@ -9,7 +9,7 @@
 .nav__logo {
   width: 200px;
   height: 24px;
-  font-family: "Roboto Slub";
+  font-family: "Roboto Slab", "Rockwell", "Courier New", serif;
   font-size: 20px;
   line-height: 24px;
   font-weight: 700;
@@ -20,11 +20,11 @@
 }
 
 .nav__links {
-  font-family: "Roboto Slab";
+  /* font-family: "Roboto Slab", "Rockwell", "Courier New", serif; */
   font-weight: 700;
   font-size: 18px;
   line-height: 24px;
-  font-family: "Roboto";
+  font-family: "Roboto", "Helvetica Neue", "Segoe UI", "Arial", sans-serif;
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;

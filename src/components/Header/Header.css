@@ -27,14 +27,14 @@
 .header__heading {
   max-width: 712px;
   height: 24px;
-  font-family: "Roboto";
+  font-family: "Roboto", "Helvetica Neue", "Segoe UI", "Arial", sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;
 }
 
 .header__title {
-  font-family: "Roboto Slab";
+  font-family: "Roboto Slab", "Rockwell", "Courier New", serif;
   font-weight: 400;
 }
 
@@ -60,7 +60,7 @@
 }
 
 .header__sub-title {
-  font-family: Roboto;
+  font-family: "Roboto", "Helvetica Neue", "Segoe UI", "Arial", sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;
