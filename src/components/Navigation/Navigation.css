@@ -89,8 +89,9 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 470px) {
   .nav {
+    width: inherit;
     height: 56px;
     padding: 0 16px;
   }

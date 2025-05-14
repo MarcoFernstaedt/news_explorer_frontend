@@ -85,7 +85,7 @@ main {
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 470px) {
   .main__header {
     margin-top: 32px;
     padding-left: 16px;
@@ -95,7 +95,7 @@ main {
     display: flex;
     flex-direction: column;
     padding: 0 16px;
-    margin: 58px auto 16px;
+    margin: 58px 0 16px;
   }
 
   .main__button {
