@@ -23,6 +23,7 @@ main {
 
 .main__card-wrap {
   display: grid;
+  align-items: center;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
   /* width: calc(
